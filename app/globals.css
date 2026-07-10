@@ -2,25 +2,91 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --background-subtle: #f7f7f4;
+  --foreground: #10130f;
+  --foreground-muted: #565f58;
+  --border-color: #e6e6e0;
+
+  /* Brand — sampled from the Kaloq wordmark */
+  --brand: #1f4b36;
+  --brand-hover: #163a29;
+  --brand-tint: #eaf1ec;
+  --lime: #dbfc00;
+  --lime-hover: #cbeb00;
+  --footer-bg: #0c1712;
+  --footer-fg: #e7ece8;
+  --footer-fg-muted: #9aa79d;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-subtle: var(--background-subtle);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-border: var(--border-color);
+
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-tint: var(--brand-tint);
+  --color-lime: var(--lime);
+  --color-lime-hover: var(--lime-hover);
+
+  --color-footer: var(--footer-bg);
+  --color-footer-foreground: var(--footer-fg);
+  --color-footer-foreground-muted: var(--footer-fg-muted);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-instrument-serif);
+  --font-display-sans: var(--font-instrument-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-feature-settings: "tnum" 1, "cv11" 1;
+}
+
+.tabular-figures {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Focus visibility for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal.is-visible {
+  animation: fade-in-up 0.6s ease-out forwards;
 }
