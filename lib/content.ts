@@ -7,7 +7,7 @@ export const site = {
   name: "Kaloq",
   domain: "[TODO: production domain]",
   description:
-    "Stablecoin-funded corporate cards and payment rails for global businesses.",
+    "Personal accounts for moving between local currency and stablecoins.",
   loginUrl: "#", // [TODO: app login URL]
 };
 
@@ -18,38 +18,42 @@ export const nav = {
   products: [
     {
       label: "Kaloq Card",
-      description: "Stablecoin-funded corporate cards on global card networks",
+      description: "A personal card for supported digital-asset balances",
       href: "/products/card",
     },
     {
-      label: "Payments",
-      description: "Stablecoin collection, conversion and fiat offramp",
+      label: "Global Account",
+      description: "Move between local currency and stablecoins from one account",
       href: "/products/payments",
     },
   ] satisfies NavDropdownItem[],
   solutions: [
     {
-      label: "For Crypto Companies",
-      description: "Spend on-chain treasury on real-world expenses",
-      href: "/solutions/crypto-companies",
+      label: "For Stablecoin Earners",
+      description: "Turn on-chain income into everyday spending",
+      href: "/solutions/stablecoin-earners",
     },
     {
-      label: "For Cross-Border Trade",
-      description: "Settle international suppliers without SWIFT friction",
-      href: "/solutions/cross-border-trade",
+      label: "For Cross-border Living",
+      description: "Keep a dollar balance while you spend locally",
+      href: "/solutions/cross-border-living",
     },
     {
-      label: "For Global Teams",
-      description: "Pay contractors and teams worldwide in stablecoins",
-      href: "/solutions/global-teams",
+      label: "For Dollar Balance Holders",
+      description: "Hold dollar value and spend only what you need",
+      href: "/solutions/dollar-balance-holders",
+    },
+    {
+      label: "For Global Online Spending",
+      description: "Use your stablecoin balance for global online purchases",
+      href: "/solutions/global-online-spending",
     },
   ] satisfies NavDropdownItem[],
   company: [
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ] satisfies NavLink[],
-  pricing: { label: "Why Kaloq", href: "#why-kaloq" } satisfies NavLink,
-  security: { label: "Security", href: "/compliance" } satisfies NavLink,
+  pricing: { label: "Pricing", href: "/pricing" } satisfies NavLink,
   login: { label: "Log in", href: site.loginUrl },
   demo: { label: "Get started", href: "/contact" },
 };
@@ -60,15 +64,16 @@ export const footer = {
       heading: "Products",
       links: [
         { label: "Kaloq Card", href: "/products/card" },
-        { label: "Payments", href: "/products/payments" },
+        { label: "Global Account", href: "/products/payments" },
       ] as NavLink[],
     },
     {
       heading: "Solutions",
       links: [
-        { label: "For Crypto Companies", href: "/solutions/crypto-companies" },
-        { label: "For Cross-Border Trade", href: "/solutions/cross-border-trade" },
-        { label: "For Global Teams", href: "/solutions/global-teams" },
+        { label: "For Stablecoin Earners", href: "/solutions/stablecoin-earners" },
+        { label: "For Cross-border Living", href: "/solutions/cross-border-living" },
+        { label: "For Dollar Balance Holders", href: "/solutions/dollar-balance-holders" },
+        { label: "For Global Online Spending", href: "/solutions/global-online-spending" },
       ] as NavLink[],
     },
     {
@@ -84,7 +89,6 @@ export const footer = {
       links: [
         { label: "Terms of Service", href: "/legal/terms" },
         { label: "Privacy Policy", href: "/legal/privacy" },
-        { label: "Compliance & Licenses", href: "/compliance" },
         { label: "AML/CTF Statement", href: "/legal/aml-statement" },
         { label: "Prohibited Jurisdictions", href: "/legal/prohibited-jurisdictions" },
       ] as NavLink[],
@@ -97,8 +101,10 @@ export const footer = {
     issuer:
       "Card services are provided through licensed partner institutions. [TODO: issuer/BIN sponsor disclosure line]",
     notBank: "Kaloq is not a bank. Stablecoin balances are not FDIC insured.",
-    copyright: "© 2026 Kaloq. All rights reserved.",
+    copyright: "© 2026 Kaloq, Inc.",
   },
+  tagline: "Make your stablecoins spendable. Spend with a card, hold in global accounts, settle at internet speed.",
+  social: { label: "X / Twitter", href: "#" }, // [TODO: X/Twitter URL]
 };
 
 // ---------------------------------------------------------------------------
@@ -114,13 +120,18 @@ export const home = {
     submitLabel: "Get started free",
     successMessage: "You're on the list — check your inbox.",
   },
-  trustBar: {
-    items: [
-      "USDC · USDT supported",
-      "Spend anywhere cards are accepted",
-      "[TODO: supported regions/corridors]",
+  // [TODO: legal/compliance review] — MSB/SOC2/custody/reserves claims below are unverified marketing
+  // copy from the design handoff; confirm exact wording and figures with compliance before shipping.
+  trustBand: {
+    heading: "Built on ",
+    headingAccent: "trust",
+    pillars: [
+      { figure: "MSB", accent: true, label: "Licensed", body: "US registered, VASP across the EU." },
+      { figure: "SOC 2", accent: false, label: "Audited", body: "Type II, continuous security audits." },
+      { figure: "100%", accent: false, label: "Custody", body: "Qualified, regulated custodians." },
+      { figure: "1:1", accent: true, label: "Reserves", body: "Attested monthly by independent auditors." },
     ],
-    logos: ["[TODO: Partner logo]", "[TODO: Partner logo]", "[TODO: Partner logo]", "[TODO: Partner logo]", "[TODO: Partner logo]"],
+    partnersLabel: "Custody & banking partners",
   },
   howItWorks: {
     heading: "How it works",
@@ -147,42 +158,47 @@ export const home = {
     items: [
       {
         title: "Kaloq Card",
-        description: "Stablecoin-funded corporate cards on global card networks.",
-        bullets: ["Virtual & physical cards", "Multi-currency spend", "Team controls & limits"],
+        description: "A personal card for supported digital-asset balances.",
+        bullets: ["Everyday purchases", "Online and in-store", "Balance visibility"],
         href: "/products/card",
       },
       {
         title: "Payments",
-        description: "Collect, convert and pay out on stablecoin rails.",
-        bullets: ["Collect stablecoins", "Offramp to fiat", "Transparent FX"],
+        description: "Move between local currency and stablecoins from one account.",
+        bullets: ["On-ramp from your bank", "Off-ramp to your bank", "See every step"],
         href: "/products/payments",
       },
     ],
   },
   audience: {
-    heading: "Built for your use case",
+    heading: "Built for your everyday",
     tiles: [
       {
-        title: "Crypto Companies",
-        pain: "Spend on-chain treasury on real SaaS, travel and ad bills — without routing through an exchange.",
-        href: "/solutions/crypto-companies",
+        title: "Stablecoin Earners",
+        pain: "Turn on-chain income into travel, subscriptions, shopping and everyday spending.",
+        href: "/solutions/stablecoin-earners",
       },
       {
-        title: "Cross-Border Trade",
-        pain: "Settle international suppliers in minutes, not days, without SWIFT fees or intermediary banks.",
-        href: "/solutions/cross-border-trade",
+        title: "Cross-border Living",
+        pain: "Keep a dollar balance while you live, work or travel across borders.",
+        href: "/solutions/cross-border-living",
       },
       {
-        title: "Global Teams",
-        pain: "Pay contractors worldwide in stablecoins — they choose card spend or local payout.",
-        href: "/solutions/global-teams",
+        title: "Dollar Balance Holders",
+        pain: "Hold supported dollar stablecoins, then spend only what everyday life needs.",
+        href: "/solutions/dollar-balance-holders",
+      },
+      {
+        title: "Global Online Spending",
+        pain: "Use your supported stablecoin balance for eligible subscriptions, software and global online purchases.",
+        href: "/solutions/global-online-spending",
       },
     ],
   },
   transparency: {
     heading: "Pricing you can see before you sign.",
     paragraph:
-      "No hidden FX markup. No unilateral repricing. Every fee is published, so you know what you're paying before you commit.",
+      "Indicative fees are shown up front, with final costs confirmed in-app before you commit.",
     rows: [
       { label: "Card issuance", value: "[TODO: value]" },
       { label: "International spend", value: "[TODO: value]" },
@@ -207,10 +223,13 @@ export const home = {
       },
     ],
   },
-  finalCta: {
-    heading: "Talk to our team.",
-    sub: "Soft-launch access for selected partners.",
-    cta: { label: "Book a Demo", href: "/contact" },
+  // [TODO: real signup/sales URLs] — both CTAs currently point at /contact.
+  readyCta: {
+    heading: "Ready to ",
+    headingAccent: "spend",
+    sub: "Open your account in minutes. Free to start.",
+    primaryCta: { label: "Get started free", href: "/contact" },
+    secondaryCta: { label: "Talk to sales", href: "/contact" },
   },
 };
 
@@ -233,72 +252,167 @@ export const finalCtaGeneric = {
 
 export const productCard = {
   hero: {
-    h1: "The corporate card funded by stablecoins.",
-    sub: "Spend USDC and USDT balances anywhere cards are accepted.",
-    cta: { label: "Book a Demo", href: "/contact" },
+    eyebrow: "Kaloq Card",
+    h1Line1: "Your crypto, ready for",
+    h1Line2: "everyday",
+    h1Accent: "spending",
+    sub: "Fund your card with supported digital assets and use it for everyday purchases — online, in stores, and while traveling.",
+    primaryCta: { label: "Get your card", href: "/contact" },
+    secondaryCta: { label: "Learn more", href: "#everyday-spending" },
+    card: { pan: "5312 4420 8890 4242", holder: "K. HOLDER", expiry: "09/29" },
+    compliance: "Kaloq Card is issued by licensed, regulated partners.",
   },
-  features: [
-    {
-      title: "Virtual cards, instant issue",
-      description: "Create a new card in seconds and start spending immediately.",
-    },
-    {
-      title: "Physical cards",
-      description: "[TODO: availability] — order physical cards for your team.",
-    },
-    {
-      title: "Spend controls & team limits",
-      description: "Set per-card and per-team limits, and freeze a card instantly.",
-    },
-    {
-      title: "Real-time transaction feed",
-      description: "See every transaction as it happens, with exports for your books.",
-    },
-    {
-      title: "Multi-BIN support",
-      description: "[TODO: confirm public wording]",
-    },
+  benefits: [
+    { title: "Spend with confidence", description: "Use your card for everyday purchases with reliable transaction processing." },
+    { title: "Manage everything in real time", description: "View transactions, manage your balance, and control your card directly from the app." },
+    { title: "Fund with crypto", description: "Add funds using supported stablecoins or digital assets without a complicated payment process." },
+    { title: "Use it around the world", description: "Pay online and in stores across supported countries, currencies, and merchant categories." },
   ],
-  funding: {
-    heading: "How funding works",
-    steps: [
-      { title: "Top up with stablecoins", description: "Send USDC or USDT to your Kaloq balance." },
-      {
-        title: "Kaloq converts at a rate shown before you confirm",
-        description: "Conversion happens the moment you top up — never after you've spent.",
-      },
-      { title: "Balance loads onto your card", description: "Spend immediately on virtual or physical cards." },
+  everyday: {
+    eyebrow: "Everyday spending",
+    heading: "One card for the way you ",
+    headingAccent: "spend",
+    copy: "From subscriptions and online shopping to dining, travel, and daily purchases, use one card for more of your everyday spending.",
+    categories: [
+      { title: "Online shopping", description: "Pay for products and services across supported online merchants." },
+      { title: "Subscriptions", description: "Manage entertainment, software, gaming, and other recurring payments." },
+      { title: "Travel", description: "Use your card for flights, hotels, transportation, and purchases abroad." },
+      { title: "Daily purchases", description: "Pay for dining, shopping, and other eligible in-store expenses." },
     ],
-    note: "Conversion happens at top-up. The rate is always shown before you confirm.",
+    app: {
+      cardLabel: "Kaloq ··4242",
+      freezeLabel: "Freeze",
+      balanceLabel: "Available balance",
+      balance: "$2,485.00",
+      viewAllLabel: "View all transactions",
+      transactions: [
+        { day: "Today", name: "Blue Bottle Coffee", sub: "8:42 AM · Contactless", category: 3, amount: "−$4.50" },
+        { name: "Aurora Books", sub: "Pending · aurorabooks.com", category: 0, amount: "−$62.00" },
+        { day: "Yesterday", name: "Streamly", sub: "Subscription · renews Aug 1", category: 1, amount: "−$9.99" },
+        { name: "Green Valley Market", sub: "6:18 PM · Oakland, CA", category: 3, amount: "−$23.10" },
+        { day: "July 18", name: "AeroVista · LIS → MEX", sub: "Foreign transaction · EUR 386.40", category: 2, amount: "−$418.20" },
+        { name: "Hotel Casa Verde", sub: "2 nights · MXN 3,780.00", category: 2, amount: "−$210.00" },
+        { name: "Aurora Books", sub: "Refund posted", category: 0, amount: "+$12.40", refund: true },
+      ],
+    },
+  },
+  funding: {
+    eyebrow: "Crypto funding",
+    heading: "From crypto balance to everyday ",
+    headingAccent: "purchases",
+    copy: "Start spending in three simple steps — no complicated payment process.",
+    steps: [
+      { number: "01", title: "Apply for your card", description: "Create an account and complete the required identity verification." },
+      { number: "02", title: "Add funds", description: "Fund your card with supported digital assets." },
+      { number: "03", title: "Start spending", description: "Use your card for eligible online and in-store purchases." },
+    ],
+    cta: { label: "Get your card", href: "/contact" },
+    flow: {
+      wallet: {
+        title: "Your wallet",
+        sub: "0x8f…c3d2",
+        amount: "500 USDC",
+        caption: "Add funds easily — transfer supported assets into your card balance.",
+      },
+      balance: {
+        title: "Card balance",
+        sub: "Ready to spend",
+        amount: "$2,485.00",
+        toast: "+500 USDC added",
+        caption: "View your available balance before making a purchase.",
+      },
+      purchase: {
+        title: "Everyday purchase",
+        sub: "Blue Bottle Coffee",
+        amount: "−$4.50",
+        caption: "Track funding, payments, refunds, and status in one place.",
+      },
+    },
+  },
+  // [TODO: legal/compliance review] — country/currency/merchant coverage figures below are
+  // unverified placeholder numbers from the design handoff; confirm with legal/compliance before shipping.
+  global: {
+    eyebrow: "Global use",
+    heading: "Made for spending across ",
+    headingAccent: "borders",
+    copy: "Use your card across supported markets and currencies, whether you are shopping online, traveling, or making everyday purchases.",
+    stats: [
+      { value: "150+", label: "Countries & regions", description: "Supported markets, online and in-store." },
+      { value: "40+", label: "Transaction currencies", description: "With real-time currency conversion." },
+      { value: "Online", label: "And in-store", description: "Across supported merchant categories." },
+      { value: "Wallets", label: "Supported digital wallets", description: "Contactless and mobile payments where available." },
+    ],
+    safeLine: "Accepted at millions of supported merchants worldwide.",
+  },
+  controls: {
+    eyebrow: "Card controls",
+    heading: "Your card, always under your ",
+    headingAccent: "control",
+    copy: "Manage your card and monitor spending directly from the app. Try the switch.",
+    card: { last4: "4242", expiry: "09/29" },
+    toastApproved: "Blue Bottle Coffee −$4.50 · Approved",
+    toastDeclined: "Transaction declined · Card frozen",
+    frozenBadge: "Frozen",
+    activeLabel: "Card active",
+    frozenLabel: "Card frozen",
+    features: [
+      { title: "Real-time notifications", description: "Receive updates whenever a card transaction occurs." },
+      { title: "Freeze and unfreeze", description: "Temporarily freeze your card and reactivate it when you are ready." },
+      { title: "Pay with your phone", description: "Add your card to supported digital wallets for contactless payments." },
+      { title: "Security, built in", description: "Identity verification, transaction monitoring, and secure account access." },
+    ],
+  },
+  // [TODO: legal/compliance review] — every fee value below is an unverified placeholder from the
+  // design handoff; confirm final pricing with legal/compliance before shipping.
+  fees: {
+    heading: "Clear and transparent ",
+    headingAccent: "fees",
+    copy: "View the complete fee schedule before applying for or using your card.",
+    rows: [
+      { label: "Virtual card application", value: "Free" },
+      { label: "Physical card delivery", value: "$8.00" },
+      { label: "Card funding", value: "0.9%" },
+      { label: "Transaction fee", value: "Free" },
+      { label: "Foreign exchange", value: "1.2%" },
+      { label: "ATM withdrawal", value: "2% · min $3" },
+      { label: "Card replacement", value: "$8.00" },
+    ],
+    moreLink: { label: "View the full fee schedule", href: "/pricing" },
   },
   faq: [
     {
-      question: "Which stablecoins and chains are supported?",
-      answer: "[TODO: confirm supported stablecoins and chains]",
+      question: "Who can apply for the card?",
+      answer: "The card is available to users in supported regions who are 18 or older and complete identity verification during signup.",
     },
     {
-      question: "What KYB information do I need to provide?",
-      answer:
-        "Standard business verification: incorporation documents, ownership information and [TODO: full KYB requirement list].",
+      question: "Which digital assets can I use to fund my card?",
+      answer: "You can fund your card with supported stablecoins and digital assets across supported networks. The full list is available in the app.",
     },
     {
-      question: "How fast does my balance settle?",
-      answer: "[TODO: settlement timing]",
+      question: "Where can I use the card?",
+      answer: "Online and in stores at millions of supported merchants worldwide, across supported countries and merchant categories.",
     },
     {
-      question: "What happens if my card balance goes negative?",
-      answer: "[TODO: final negative balance policy]",
+      question: "Are there any spending limits?",
+      answer: "Per-transaction, daily, and monthly limits apply and vary by region and verification level. You can view your limits in the app.",
     },
     {
-      question: "Which regions are supported?",
-      answer: "[TODO: supported regions]",
+      question: "How long does card approval take?",
+      answer: "Virtual cards are typically issued within minutes of approval. Physical cards arrive within 7–14 business days.",
+    },
+    {
+      question: "What should I do if my card is lost?",
+      answer: "Freeze your card instantly from the app, then cancel it and order a replacement. Your balance stays safe in your account.",
     },
   ] satisfies FaqItem[],
-  fees: [
-    { label: "Issuance fee", value: "[TODO]", note: "Charged once when a new card is created." },
-    { label: "Monthly fee", value: "[TODO]", note: "Per active card, billed monthly." },
-    { label: "International spend / FX", value: "[TODO]", note: "Applied on transactions outside your home currency." },
-  ] satisfies FeeRow[],
+  faqMoreLink: { label: "View all questions", href: "#" }, // [TODO: link to a full FAQ page once one exists]
+  closer: {
+    heading: "Make your crypto ",
+    headingAccent: "spendable",
+    copy: "Apply for your card, add supported digital assets, and start spending online and in stores.",
+    primaryCta: { label: "Get your card", href: "/contact" },
+    secondaryLink: { label: "Check availability", href: "/contact" },
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -307,54 +421,122 @@ export const productCard = {
 
 export const productPayments = {
   hero: {
-    h1: "Collect, convert and pay out — on stablecoin rails.",
-    sub: "For businesses invoicing or paying globally.",
-    cta: { label: "Book a Demo", href: "/contact" },
+    eyebrow: "Kaloq Global Account",
+    h1Line1: "Your money,",
+    h1Line2: "on and",
+    h1Accent: "off chain",
+    sub: "Hold supported local currencies and stablecoins in one account. Move funds between your bank account and wallet when you need.",
+    primaryCta: { label: "Get started", href: "/contact" },
+    secondaryCta: { label: "See how it works", href: "#how-it-works" },
+    compliance: "Supported currencies, assets, and availability vary by region.",
   },
-  capabilities: [
+  benefits: [
     {
-      title: "Collect",
-      description: "Generate stablecoin invoices and deposit addresses your customers can pay directly.",
+      title: "Hold fiat and stablecoins",
+      description: "Keep both sides of your money visible in one personal account.",
     },
     {
-      title: "Convert",
-      description: "Transparent FX with a published markup — see the rate before you commit.",
+      title: "Move money in from your bank",
+      description: "Add local currency through the supported transfer method shown in your account.",
     },
     {
-      title: "Pay out",
-      description: "Send fiat to bank accounts in [TODO: supported corridors].",
+      title: "Convert between balances",
+      description: "Move between supported local currencies and stablecoins when you are ready.",
+    },
+    {
+      title: "Send to your bank or wallet",
+      description: "Choose where your money goes next and follow the transfer status in one place.",
     },
   ],
-  rateTransparency: {
-    heading: "Rates you can see up front",
-    paragraph:
-      "Every conversion carries a single published markup over the reference mid-market rate. No spread hidden inside the exchange rate, no surprise deduction after the fact.",
-    calculator: {
-      heading: "Estimate a payout",
-      disclaimer: "Illustrative rates — not final pricing.",
-      corridors: [
-        { label: "USDC → USD (US bank account)", rate: 0.01 },
-        { label: "USDC → EUR (SEPA)", rate: 0.012 },
-        { label: "USDT → MXN", rate: 0.015 },
-        { label: "USDT → PHP", rate: 0.015 },
-      ],
+  flow: {
+    eyebrow: "How it works",
+    heading: "One account. Two directions.",
+    sub: "Move in from your bank, move out to your wallet, or take the reverse path when you need to come back to local currency.",
+    modes: {
+      on: {
+        label: "On-ramp",
+        title: "From local currency to stablecoins",
+        steps: [
+          { number: "01", title: "Add local currency", description: "Transfer from your supported bank account." },
+          { number: "02", title: "Convert in Kaloq", description: "Review the conversion details before confirming." },
+          { number: "03", title: "Send to your wallet", description: "Move supported stablecoins when they are ready." },
+        ],
+      },
+      off: {
+        label: "Off-ramp",
+        title: "From stablecoins to local currency",
+        steps: [
+          { number: "01", title: "Send stablecoins", description: "Transfer supported assets from your wallet." },
+          { number: "02", title: "Convert in Kaloq", description: "Review the conversion details before confirming." },
+          { number: "03", title: "Move to your bank", description: "Send local currency through the supported payout method." },
+        ],
+      },
     },
   },
+  account: {
+    eyebrow: "Your Global Account",
+    heading: "Keep both sides of your money in one place.",
+    copy: "View your fiat and stablecoin balances, follow every transfer, and decide when to convert or move funds.",
+    balanceLabel: "Total balance",
+    balance: "$2,485.00",
+    balances: [
+      { label: "Fiat balance", value: "$1,985.00", tone: "sand" },
+      { label: "Stablecoin balance", value: "500 USDC", tone: "lime" },
+    ],
+    activity: [
+      { label: "Bank transfer", detail: "Local currency added", value: "+$500.00", status: "Complete" },
+      { label: "Wallet transfer", detail: "Stablecoins received", value: "+500 USDC", status: "Complete" },
+      { label: "Conversion", detail: "Balance movement", value: "In review", status: "Review" },
+    ],
+  },
+  review: {
+    eyebrow: "Before you move",
+    heading: "See the details before you confirm.",
+    copy: "Review the source, destination, asset, network, and final amount before confirming a transfer.",
+    rows: [
+      { label: "You send", value: "Your selected amount" },
+      { label: "From", value: "Bank account or wallet" },
+      { label: "To", value: "Wallet or bank account" },
+      { label: "Status", value: "Ready for review" },
+    ],
+  },
+  cardBridge: {
+    eyebrow: "More ways to use your balance",
+    heading: "From your account to everyday spending.",
+    copy: "Eligible balances can also be used with the Kaloq Card for supported online and in-store purchases.",
+    cta: { label: "Explore Kaloq Card", href: "/products/card" },
+  },
   faq: [
-    { question: "Which stablecoins can I collect?", answer: "[TODO: confirm supported stablecoins]" },
     {
-      question: "How is the conversion rate determined?",
-      answer: "A published markup over the reference mid-market rate. [TODO: confirm markup]",
+      question: "What is a Kaloq Global Account?",
+      answer: "It is a personal account for holding supported local currencies and stablecoins, then moving between your bank account and wallet.",
     },
-    { question: "Which corridors are supported for payout?", answer: "[TODO: supported corridors]" },
-    { question: "How long do payouts take?", answer: "[TODO: settlement timing]" },
-    { question: "Is there a minimum or maximum transaction size?", answer: "[TODO: transaction limits]" },
+    {
+      question: "How do I add money from my bank account?",
+      answer: "Use the supported transfer method and account details shown in Kaloq. Availability depends on your region and account status.",
+    },
+    {
+      question: "How do I send stablecoins from my wallet?",
+      answer: "Choose the supported asset and network shown in your account, then transfer from your wallet and follow the status in Kaloq.",
+    },
+    {
+      question: "Which currencies, assets, and networks are supported?",
+      answer: "Support varies by region and can change over time. Your account shows the currencies, assets, and networks currently available to you.",
+    },
+    {
+      question: "Can I withdraw money to my bank account?",
+      answer: "Bank transfers are available where supported. Review the destination and availability shown in your account before confirming.",
+    },
+    {
+      question: "Is Kaloq a bank?",
+      answer: "No. Kaloq is not a bank. Account availability, custody, and transfer services are provided through applicable partners and supported regions.",
+    },
   ] satisfies FaqItem[],
-  fees: [
-    { label: "Deposit", value: "[TODO]", note: "Applied when stablecoins are received into your Kaloq balance." },
-    { label: "Conversion markup", value: "[TODO]", note: "Applied on top of the reference mid-market rate." },
-    { label: "Offramp fee (per corridor)", value: "[TODO]", note: "Varies by destination country and currency." },
-  ] satisfies FeeRow[],
+  closer: {
+    heading: "Move money on and off chain.",
+    sub: "Hold, convert, and move supported currencies and stablecoins from one account.",
+    cta: { label: "Get started", href: "/contact" },
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -362,159 +544,128 @@ export const productPayments = {
 // ---------------------------------------------------------------------------
 
 export type SolutionFeature = { title: string; description: string };
+export type SolutionStep = { number: string; title: string; description: string };
+
+const personalSolutionFaq = [
+  { question: "What can I use Kaloq for?", answer: "Kaloq helps you move supported assets from your wallet into a balance you can use with the Kaloq Card for eligible everyday purchases." },
+  { question: "Which assets and networks are supported?", answer: "Support varies by region and account. Your Kaloq account shows the assets and networks currently available to you." },
+  { question: "Where can I use the Kaloq Card?", answer: "Use the card for supported online, in-store, and travel purchases. Availability depends on your region and merchant category." },
+  { question: "Can I see my balance and transactions?", answer: "Yes. Your account shows available balance, card activity, and transfer status in one place." },
+];
+
+const sharedStablecoinFlow = [
+  { number: "01", title: "Start with supported stablecoins", description: "Keep supported USDT or USDC in your personal wallet." },
+  { number: "02", title: "Move funds into Kaloq", description: "Transfer funds into Kaloq and review the available balance." },
+  { number: "03", title: "Pay with the Kaloq Card", description: "Use the card for eligible online, in-store, and travel purchases." },
+  { number: "04", title: "The merchant receives fiat", description: "Stablecoins are converted in the card flow; merchants receive ordinary local currency." },
+] satisfies SolutionStep[];
+
+const solutionFaq = [
+  ...personalSolutionFaq,
+  { question: "Does the merchant receive crypto?", answer: "No. In the card transaction flow, supported stablecoins are converted and the merchant receives ordinary fiat currency." },
+  { question: "What checks apply?", answer: "KYC, transaction monitoring, source-of-funds review, and restrictions for certain regions or high-risk merchants may apply." },
+] satisfies FaqItem[];
 
 export const solutions = {
-  cryptoCompanies: {
-    slug: "crypto-companies",
-    heading: "For Crypto Companies",
-    hero: {
-      h1: "Spend your treasury without leaving the chain.",
-      sub: "Turn on-chain balances into real-world spend — no exchange detour.",
-    },
-    painPoints: [
-      "Moving funds through an exchange just to pay a vendor",
-      "Treasury sits in stablecoins while bills need fiat",
-      "Card programs that don't understand crypto-native businesses",
-    ],
-    solutionIntro: "Kaloq lets your treasury pay the bills directly.",
+  stablecoinEarners: {
+    slug: "stablecoin-earners",
+    heading: "For Stablecoin Earners",
+    hero: { h1: "Turn on-chain income into everyday spending.", sub: "If you earn in supported USDT or USDC, move it into Kaloq and use the Kaloq Card for travel, subscriptions, shopping, and everyday expenses.", primaryCta: { label: "Get your card", href: "/contact" }, secondaryCta: { label: "Explore Kaloq Card", href: "/products/card" }, image: "/images/use-cases/hero-landscape.jpg", imageAlt: "A warm editorial landscape representing income that moves with you", objectPosition: "38% center" },
+    painPoints: ["Your income arrives on-chain, but daily life still expects a card.", "Selling on an exchange and withdrawing to a bank adds extra steps before you can spend.", "You want to see what moved before your balance becomes a purchase."],
+    solutionIntro: "A direct path from supported on-chain income to the things you buy.",
     features: [
-      { title: "Kaloq Card", description: "Spend stablecoin balances directly — no offramp required first." },
-      { title: "Payments", description: "Offramp to fiat when a vendor needs a bank transfer instead." },
-      { title: "Real-time visibility", description: "Track every transaction against your treasury in one dashboard." },
+      { title: "Use the balance you already earn", description: "Start with supported USDT or USDC in your personal wallet." },
+      { title: "Pay for real life", description: "Use the Kaloq Card for software, subscriptions, travel, shopping, and everyday expenses." },
+      { title: "Keep activity visible", description: "Review your balance, card activity, and transfer status in one place." },
     ] satisfies SolutionFeature[],
-    caseStudy: {
-      quote: "[TODO: customer quote]",
-      attribution: "[TODO: Name, Title, Company]",
-    },
+    flow: { heading: "From on-chain income to a real purchase.", sub: "Move supported funds into Kaloq, then let the card handle the payment flow.", steps: sharedStablecoinFlow },
+    faq: solutionFaq,
   },
-  crossBorderTrade: {
-    slug: "cross-border-trade",
-    heading: "For Cross-Border Trade",
-    hero: {
-      h1: "Settle suppliers in minutes, not days.",
-      sub: "Pay international suppliers without routing through SWIFT and correspondent banks.",
-    },
-    painPoints: [
-      "Payments stuck for days in correspondent bank chains",
-      "Wire fees and FX spread eating into margins",
-      "No visibility into where a payment actually is",
-    ],
-    solutionIntro: "Kaloq settles supplier payments on stablecoin rails, with fiat payout on the other end.",
+  crossBorderLiving: {
+    slug: "cross-border-living",
+    heading: "For Cross-border Living",
+    hero: { h1: "Keep a dollar balance. Spend in local currency.", sub: "Hold supported dollar stablecoins and use the Kaloq Card for eligible expenses as you live, work, or travel across borders.", primaryCta: { label: "Get your card", href: "/contact" }, secondaryCta: { label: "See pricing", href: "/pricing" }, image: "/images/use-cases/hero-landscape.jpg", imageAlt: "A warm landscape representing life across borders", objectPosition: "78% center" },
+    painPoints: ["Your balance can travel with you while your expenses change country by country.", "Travel, accommodation, transport, restaurants, and online tools still need a usable card.", "A cross-border card is not automatically cheaper; funding, conversion, FX, cross-border, and ATM costs all matter."],
+    solutionIntro: "One personal spending flow for the places your life takes you.",
     features: [
-      { title: "Payments", description: "Collect, convert and pay out without an intermediary bank chain." },
-      { title: "Transparent FX", description: "One published markup — see the cost before you send." },
-      { title: "Real-time tracking", description: "Know exactly where a payment is, from send to settlement." },
+      { title: "Stay ready across borders", description: "Keep supported dollar stablecoins available for eligible local spending." },
+      { title: "Cover the moving parts", description: "Use the Kaloq Card for travel, accommodation, transport, restaurants, and online tools." },
+      { title: "Understand the total cost", description: "Review current indicative fees and confirm the final cost before you spend." },
     ] satisfies SolutionFeature[],
-    disclaimerNote: "[TODO: verify claims legally reviewable]",
-    caseStudy: {
-      quote: "[TODO: customer quote]",
-      attribution: "[TODO: Name, Title, Company]",
-    },
+    flow: { heading: "Keep the same balance as life moves.", sub: "Your wallet balance starts the flow; the card completes it in local spending.", steps: sharedStablecoinFlow },
+    faq: solutionFaq,
   },
-  globalTeams: {
-    slug: "global-teams",
-    heading: "For Global Teams",
-    hero: {
-      h1: "Pay your global team in stablecoins.",
-      sub: "Contractors and teams choose card spend or a local payout — whichever works for them.",
-    },
-    painPoints: [
-      "Juggling several payout providers across countries",
-      "Contractors waiting days to access their pay",
-      "Manual reconciliation across payroll and finance tools",
-    ],
-    solutionIntro: "Kaloq gives every contractor a single, flexible way to get paid.",
+  dollarBalanceHolders: {
+    slug: "dollar-balance-holders",
+    heading: "For Dollar Balance Holders",
+    hero: { h1: "Hold dollar value. Spend in local currency.", sub: "Keep supported dollar stablecoins in your wallet, then move funds into Kaloq when everyday expenses arise.", primaryCta: { label: "Get your card", href: "/contact" }, secondaryCta: { label: "Explore Kaloq Card", href: "/products/card" }, image: "/images/use-cases/halftone-orb.jpg", imageAlt: "A soft halftone orb representing a dollar balance", objectPosition: "center" },
+    painPoints: ["You want to hold a dollar-denominated balance while local expenses continue every day.", "A wallet can hold value, but groceries, transport and subscriptions still need a card.", "You need a clear view of what you move into spending and what remains available."],
+    solutionIntro: "Keep dollar value connected to the moments you need to spend.",
     features: [
-      { title: "Payments", description: "Pay out to stablecoin wallets or local bank accounts from one place." },
-      { title: "Kaloq Card", description: "Recipients can spend directly instead of cashing out." },
-      { title: "Real-time visibility", description: "See payout status and history without chasing anyone." },
+      { title: "Keep value in dollars", description: "Hold supported dollar stablecoins until an eligible expense comes up." },
+      { title: "Spend on demand", description: "Move only what you need into Kaloq and use the Kaloq Card for eligible local purchases." },
+      { title: "Follow every step", description: "See balances, card activity, and transfer status before and after you spend." },
     ] satisfies SolutionFeature[],
-    caseStudy: {
-      quote: "[TODO: customer quote]",
-      attribution: "[TODO: Name, Title, Company]",
-    },
+    flow: { heading: "From dollar balance to local purchase.", sub: "Keep supported dollar stablecoins ready, then connect them to everyday spending when you choose.", steps: sharedStablecoinFlow },
+    faq: solutionFaq,
+  },
+  globalOnlineSpending: {
+    slug: "global-online-spending",
+    heading: "For Global Online Spending",
+    hero: { h1: "Use your stablecoin balance for global online spending.", sub: "Move supported USDT or USDC into Kaloq and use the Kaloq Card for eligible subscriptions, software, shopping, travel bookings, and other international online purchases.", primaryCta: { label: "Get your card", href: "/contact" }, secondaryCta: { label: "Explore Kaloq Card", href: "/products/card" }, image: "/images/use-cases/texture-sky.jpg", imageAlt: "A pale textured sky representing global online access", objectPosition: "center" },
+    painPoints: ["Your stablecoin balance is ready, but many online services still expect a card.", "International subscriptions, software and shopping can fail when your local card or payment route is not supported.", "You want to know what moved into a purchase and what remains in your balance."],
+    solutionIntro: "Bring the balance you hold into the online services you use.",
+    features: [
+      { title: "Pay for global services", description: "Use the Kaloq Card for eligible subscriptions, software, shopping and travel bookings." },
+      { title: "Keep your balance visible", description: "Review your balance, card activity and transfer status in one place." },
+      { title: "Know what is supported", description: "Payment availability depends on your region, merchant category and card verification requirements." },
+    ] satisfies SolutionFeature[],
+    flow: { heading: "From stablecoin balance to online checkout.", sub: "Move supported funds into Kaloq, then use the card for eligible global online purchases.", steps: sharedStablecoinFlow },
+    faq: solutionFaq,
   },
 };
 
-export const solutionsList = [solutions.cryptoCompanies, solutions.crossBorderTrade, solutions.globalTeams];
+export const solutionsList = [solutions.stablecoinEarners, solutions.crossBorderLiving, solutions.dollarBalanceHolders, solutions.globalOnlineSpending];
 
 // ---------------------------------------------------------------------------
 // Pricing
 // ---------------------------------------------------------------------------
 
 export const pricing = {
-  h1: "Transparent pricing.",
-  intro: "Published rates. Volume pricing available for qualifying businesses.",
+  h1: "Simple fees, shown clearly.",
+  intro: "Understand the possible cost of funding, spending, converting, and withdrawing before you use your card.",
+  indicativeLabel: "Indicative — pending final confirmation",
   groups: [
     {
-      heading: "Card",
+      heading: "Kaloq Card",
       rows: [
-        { label: "Issuance fee", value: "[TODO]", note: "Charged once when a new card is created." },
-        { label: "Monthly fee", value: "[TODO]", note: "Per active card, billed monthly." },
-        { label: "Domestic spend", value: "[TODO]", note: "Transactions in your home currency." },
-        { label: "International spend / FX", value: "[TODO]", note: "Applied on transactions outside your home currency." },
-        { label: "ATM withdrawal", value: "[TODO]", note: "Per withdrawal, in addition to any ATM operator fee." },
-      ] satisfies FeeRow[],
-    },
-    {
-      heading: "Payments",
-      rows: [
-        { label: "Deposit", value: "[TODO]", note: "Applied when stablecoins are received into your balance." },
-        { label: "Conversion markup", value: "[TODO]", note: "Applied on top of the reference mid-market rate." },
-        { label: "Offramp fee (per corridor)", value: "[TODO]", note: "Varies by destination country and currency." },
+        { label: "Virtual card application", value: "Free", note: "Indicative rate for a virtual card application." },
+        { label: "Physical card delivery", value: "$8.00", note: "Indicative delivery charge for a physical card." },
+        { label: "Card funding", value: "0.9%", note: "Indicative rate when funding your card balance." },
+        { label: "Card transaction", value: "Free", note: "Indicative card transaction fee." },
+        { label: "Foreign exchange", value: "1.2%", note: "Indicative FX rate when conversion applies." },
+        { label: "ATM withdrawal", value: "2% · minimum $3", note: "Indicative rate; the ATM operator may charge separately." },
+        { label: "Card replacement", value: "$8.00", note: "Indicative replacement charge." },
       ] satisfies FeeRow[],
     },
   ],
-  volumePricing: {
-    heading: "Volume pricing",
-    paragraph: "Higher volume? Talk to us about custom pricing for your business.",
-    cta: { label: "Book a Demo", href: "/contact" },
-  },
-  noSurprises: {
-    heading: "No surprises",
+  costFactors: {
+    heading: "What affects the total cost",
     items: [
-      "No unilateral repricing without [TODO: notice period] notice",
-      "No hidden FX spread",
-      "Fee changes announced in advance",
+      "Blockchain network fees when funds move on-chain.",
+      "Stablecoin funding or conversion fees.",
+      "Foreign-exchange markup and cross-border transaction fees.",
+      "Additional fees charged by an ATM operator.",
+      "The final rate shown in-app and in the formal fee schedule at confirmation.",
     ],
   },
   faq: [
-    { question: "Is there a monthly fee?", answer: "[TODO: confirm monthly fee structure]" },
-    { question: "How does volume pricing work?", answer: "[TODO: volume pricing thresholds]" },
-    {
-      question: "Are there any hidden fees?",
-      answer: "No. Every fee is listed on this page. [TODO: confirm completeness]",
-    },
+    { question: "Are these fees final?", answer: "No. The figures on this page are indicative and pending final confirmation. Check the in-app confirmation page and formal fee schedule before using the card." },
+    { question: "How does foreign exchange affect the total?", answer: "An indicative FX rate may apply when a transaction requires conversion. The final amount depends on the currencies and route involved." },
+    { question: "Can an ATM charge more?", answer: "Yes. An ATM operator may add its own fee on top of Kaloq's indicative withdrawal rate." },
+    { question: "Is card funding charged?", answer: "The current indicative card funding rate is 0.9%. Funding method, supported asset, network, and region can affect the final cost." },
+    { question: "Do fees vary by region?", answer: "They can. Availability, supported assets, conversion routes, and applicable fees depend on your region and account." },
   ] satisfies FaqItem[],
-};
-
-// ---------------------------------------------------------------------------
-// Compliance
-// ---------------------------------------------------------------------------
-
-export const compliance = {
-  h1: "Compliance & Licenses.",
-  registrations: {
-    heading: "Registrations",
-    rows: [
-      {
-        jurisdiction: "[TODO: jurisdiction]",
-        type: "[TODO: registration type]",
-        number: "[TODO: registration number]",
-      },
-    ],
-  },
-  amlProgram: {
-    heading: "AML/CTF program",
-    paragraph:
-      "Kaloq maintains a risk-based AML/CTF program, including know-your-business and know-your-customer verification, sanctions screening, and ongoing transaction monitoring. [TODO: verify program description with compliance team]",
-  },
-  restrictedJurisdictions: {
-    heading: "Restricted jurisdictions",
-    statement: "Kaloq does not offer services in certain jurisdictions.",
-    list: ["[TODO: final restricted jurisdictions list]"],
-  },
-  contact: "For due-diligence inquiries, contact [TODO: compliance email].",
 };
 
 // ---------------------------------------------------------------------------

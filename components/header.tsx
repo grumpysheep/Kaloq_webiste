@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import Link from "next/link";
 import { Logo } from "@/components/ui/logo";
 import { Button } from "@/components/ui/button";
+import { LanguageToggle } from "@/components/language-provider";
 import { nav, type NavDropdownItem } from "@/lib/content";
 
 function NavDropdown({ label, items }: { label: string; items: NavDropdownItem[] }) {
@@ -114,12 +115,10 @@ export function Header() {
           <Link href={nav.pricing.href} className="py-2 text-sm font-medium text-current hover:text-brand">
             {nav.pricing.label}
           </Link>
-          <Link href={nav.security.href} className="py-2 text-sm font-medium text-current hover:text-brand">
-            {nav.security.label}
-          </Link>
         </nav>
 
         <div className="hidden items-center justify-end gap-7 md:flex">
+          <LanguageToggle />
           <Button href={nav.login.href} variant="ghost" className={overHero ? "text-white hover:bg-white/10" : ""}>
             {nav.login.label}
           </Button>
@@ -164,12 +163,10 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
         <Link href={nav.pricing.href} onClick={onClose} className="block border-b border-border py-4 text-base font-medium text-foreground">
           {nav.pricing.label}
         </Link>
-        <Link href={nav.security.href} onClick={onClose} className="block border-b border-border py-4 text-base font-medium text-foreground">
-          {nav.security.label}
-        </Link>
         <MobileGroup title="Company" items={nav.company.map((c) => ({ ...c, description: "" }))} onNavigate={onClose} />
 
-        <div className="mt-6">
+        <div className="mt-6 flex items-center gap-4">
+          <LanguageToggle className="text-foreground" />
           <Link href={nav.login.href} onClick={onClose} className="block py-3 text-base font-medium text-foreground">
             {nav.login.label}
           </Link>

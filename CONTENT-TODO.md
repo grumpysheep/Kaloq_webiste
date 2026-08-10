@@ -18,24 +18,22 @@ Almost everything lives in [`lib/content.ts`](lib/content.ts) — that's the sin
 
 | Placeholder | Location |
 |---|---|
-| Supported regions/corridors (trust bar) | `lib/content.ts:118` |
-| Partner/client logos ×5 | `lib/content.ts:120` (`home.trustBar.logos`) |
 | Fee preview values ×3 (Card issuance, International spend, Bank payout) | `lib/content.ts:184-186` |
 | Onboarding time | `lib/content.ts:195` |
 | Support channel/SLA | `lib/content.ts:203` |
+| Use Cases imagery ×3 (placeholder stock photos) | `components/marketing/use-cases.tsx` (`USE_CASES`) — swap `public/images/use-cases/*.jpg` for real photography. |
+| "The Card" product video (currently a floating card mock + doodles) | `components/marketing/the-card.tsx` (`VideoStage`) — deliver 1120×1280 @2x transparent video (WebM VP9+alpha, HEVC .mov alpha for Safari); swap markup noted in a TODO comment in the component. |
+| Trust band compliance claims (MSB/EU VASP, SOC 2 Type II, 100% custody, 1:1 reserves) | `lib/content.ts` (`home.trustBand`) — unverified marketing copy from the design handoff; get legal/compliance sign-off before shipping. |
+| Real signup / sales URLs for the "Ready to spend?" CTA | `lib/content.ts` (`home.readyCta`) — both buttons currently point at `/contact`. |
+| X/Twitter URL | `lib/content.ts` (`footer.social.href`) — currently `#`. |
 
 ## Products — Card (`/products/card`)
 
 | Placeholder | Location |
 |---|---|
-| Physical card availability | `lib/content.ts:244` |
-| Multi-BIN support wording (confirm legally/publicly safe phrasing) | `lib/content.ts:256` |
-| Supported stablecoins & chains | `lib/content.ts:274` |
-| Full KYB requirement list | `lib/content.ts:279` |
-| Settlement timing | `lib/content.ts:283` |
-| Negative balance policy | `lib/content.ts:287` |
-| Supported regions | `lib/content.ts:291` |
-| Fee values — issuance, monthly, international spend/FX | `lib/content.ts:295-297` |
+| Global-use figures (150+ countries, 40+ currencies) | `lib/content.ts:323` (`productCard.global.stats`) — unverified placeholder numbers from the design handoff; confirm with legal/compliance before shipping. |
+| Full fee schedule (7 rows: virtual/physical card, funding, transaction, FX, ATM, replacement) | `lib/content.ts:356` (`productCard.fees.rows`) — unverified placeholder values from the design handoff; confirm with legal/compliance before shipping. |
+| "View all questions" link target | `lib/content.ts:399` (`productCard.faqMoreLink.href`) — currently `#`; point at a full FAQ page once one exists. |
 
 ## Products — Payments (`/products/payments`)
 

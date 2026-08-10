@@ -12,13 +12,15 @@ export function FadeIn({
   delay?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(
-    () => typeof IntersectionObserver === "undefined"
-  );
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const node = ref.current;
-    if (!node || typeof IntersectionObserver === "undefined") return;
+    if (!node) return;
+    if (typeof IntersectionObserver === "undefined") {
+      const id = window.setTimeout(() => setVisible(true), 0);
+      return () => window.clearTimeout(id);
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Sans, Instrument_Serif } from "next/font/google";
+import { Inter, Instrument_Sans, Instrument_Serif, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { LanguageProvider } from "@/components/language-provider";
 import { site } from "@/lib/content";
 
 const inter = Inter({
@@ -25,6 +26,13 @@ const instrumentSerif = Instrument_Serif({
   display: "swap",
 });
 
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
     default: `${site.name} — Stablecoin payments for global business`,
@@ -41,7 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${instrumentSans.variable} ${instrumentSerif.variable} h-full antialiased`}
+      className={`${inter.variable} ${instrumentSans.variable} ${instrumentSerif.variable} ${ibmPlexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <a
@@ -50,11 +58,13 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <Header />
-        <main id="main-content" className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        <LanguageProvider>
+          <Header />
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

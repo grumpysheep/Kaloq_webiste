@@ -13,9 +13,9 @@
   --brand-tint: #eaf1ec;
   --lime: #dbfc00;
   --lime-hover: #cbeb00;
-  --footer-bg: #0c1712;
-  --footer-fg: #e7ece8;
-  --footer-fg-muted: #9aa79d;
+  --footer-bg: #0e2a1e;
+  --footer-fg: #ffffff;
+  --footer-fg-muted: rgba(255, 255, 255, 0.72);
 }
 
 @theme inline {
@@ -38,6 +38,7 @@
   --font-sans: var(--font-inter);
   --font-display: var(--font-instrument-serif);
   --font-display-sans: var(--font-instrument-sans);
+  --font-mono: var(--font-plex-mono);
 }
 
 html {
@@ -89,4 +90,141 @@ body {
 
 .reveal.is-visible {
   animation: fade-in-up 0.6s ease-out forwards;
+}
+
+/* Capabilities bento (homepage) */
+@keyframes cap-flow {
+  0% { left: 0; opacity: 0; }
+  12% { opacity: 1; }
+  82% { opacity: 1; }
+  100% { left: calc(100% - 10px); opacity: 0; }
+}
+@keyframes cap-toast {
+  0%, 55% { opacity: 0; }
+  63%, 88% { opacity: 1; }
+  96%, 100% { opacity: 0; }
+}
+@keyframes cap-ring {
+  0% { transform: scale(0.55); opacity: 0.7; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+@keyframes cap-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes cap-print {
+  0%, 4% { transform: translateY(-96%); opacity: 1; }
+  40%, 88% { transform: translateY(0); opacity: 1; }
+  97%, 100% { transform: translateY(0); opacity: 0; }
+}
+@keyframes cap-stamp {
+  0%, 44% { opacity: 0; transform: scale(1.25) rotate(-8deg); }
+  52%, 88% { opacity: 0.95; transform: scale(1) rotate(-8deg); }
+  97%, 100% { opacity: 0; transform: scale(1) rotate(-8deg); }
+}
+
+/* The Card (homepage) */
+@keyframes card-float {
+  0%, 100% { transform: translateY(0) rotate(-1.5deg); }
+  50% { transform: translateY(-16px) rotate(-1.5deg); }
+}
+
+/* Card product page — one continuous canvas + hero dusk gradient.
+   The hero gradient's final stop (#F7F4EA) must exactly match the canvas's first stop —
+   that's what makes the hero-to-canvas seam invisible. Change one, change both. */
+.card-canvas {
+  background-color: #F8F6EF;
+  background-image:
+    radial-gradient(900px 600px at 12% 16%, rgba(232, 161, 61, .07), transparent 70%),
+    radial-gradient(1000px 700px at 88% 36%, rgba(239, 148, 132, .06), transparent 70%),
+    radial-gradient(1000px 700px at 8% 56%, rgba(219, 252, 0, .09), transparent 70%),
+    radial-gradient(900px 650px at 90% 76%, rgba(232, 196, 104, .07), transparent 70%),
+    radial-gradient(1100px 800px at 50% 100%, rgba(27, 69, 51, .05), transparent 72%),
+    linear-gradient(180deg, #F7F4EA 0%, #FAF8F1 12%, #F9F8F0 32%, #F7F6EE 52%, #F3F4EB 72%, #EFF1E7 88%, #EBEEE2 100%);
+}
+
+.card-hero-bg {
+  background: linear-gradient(180deg, #0E2A1E 0%, #16382A 30%, #45543E 52%, #9A9878 68%, #DFDCC6 82%, #F7F4EA 93%, #F7F4EA 100%);
+}
+
+.card-hero-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, .35) 1px, transparent 1.2px);
+  background-size: 4px 4px;
+  mix-blend-mode: overlay;
+  -webkit-mask-image: linear-gradient(180deg, #000 62%, transparent 92%);
+  mask-image: linear-gradient(180deg, #000 62%, transparent 92%);
+}
+
+@keyframes kq-hero-card-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes kq-flow-v {
+  0% { top: 0; opacity: 0; }
+  14% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { top: calc(100% - 9px); opacity: 0; }
+}
+
+/* Global Account page — same visual family as the Card product page, with a
+   two-way money movement story instead of a card-first hero. */
+.global-account-canvas {
+  background-color: #F8F6EF;
+  background-image:
+    radial-gradient(900px 600px at 12% 14%, rgba(232, 161, 61, .07), transparent 70%),
+    radial-gradient(1000px 700px at 88% 30%, rgba(239, 148, 132, .05), transparent 70%),
+    radial-gradient(1000px 700px at 10% 58%, rgba(219, 252, 0, .08), transparent 70%),
+    radial-gradient(900px 650px at 90% 82%, rgba(232, 196, 104, .06), transparent 70%),
+    linear-gradient(180deg, #F7F4EA 0%, #FAF8F1 16%, #F9F8F0 42%, #F7F6EE 68%, #EFF1E7 100%);
+}
+
+.global-account-hero-bg {
+  background: linear-gradient(180deg, #0E2A1E 0%, #16382A 30%, #45543E 52%, #9A9878 68%, #DFDCC6 82%, #F7F4EA 93%, #F7F4EA 100%);
+}
+
+.global-account-hero-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, .35) 1px, transparent 1.2px);
+  background-size: 4px 4px;
+  mix-blend-mode: overlay;
+  -webkit-mask-image: linear-gradient(180deg, #000 62%, transparent 92%);
+  mask-image: linear-gradient(180deg, #000 62%, transparent 92%);
+}
+
+@keyframes kq-account-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.global-account-float {
+  animation: kq-account-float 7s ease-in-out infinite;
+}
+
+@keyframes kq-ramp-flow {
+  0% { top: 0; opacity: 0; }
+  14% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { top: calc(100% - 9px); opacity: 0; }
+}
+
+.kq-ramp-dot {
+  animation: kq-ramp-flow 3.4s linear infinite;
+}
+
+/* Personal solution pages — editorial, warm, and intentionally lighter than
+   the product hero surfaces. */
+.solution-light-hero {
+  background:
+    radial-gradient(560px 430px at 84% 22%, rgba(219, 252, 0, .14), transparent 70%),
+    radial-gradient(700px 520px at 10% 88%, rgba(205, 218, 207, .42), transparent 72%),
+    linear-gradient(135deg, #FAF8F1 0%, #F7F4EA 54%, #F1EEE2 100%);
+}
+
+.personal-solution-canvas {
+  background-color: #F8F6EF;
+  background-image:
+    radial-gradient(900px 600px at 12% 8%, rgba(232, 161, 61, .06), transparent 70%),
+    radial-gradient(1000px 700px at 88% 32%, rgba(181, 203, 186, .17), transparent 72%),
+    radial-gradient(1000px 700px at 8% 70%, rgba(219, 252, 0, .06), transparent 70%),
+    linear-gradient(180deg, #FAF8F1 0%, #F8F6EF 52%, #F4F2E9 100%);
 }
