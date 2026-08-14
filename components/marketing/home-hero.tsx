@@ -1,24 +1,9 @@
-"use client";
-
-import { FormEvent, useState } from "react";
 import { ScrollScrubVideo } from "@/components/marketing/scroll-scrub-video";
 import { home } from "@/lib/content";
 
 const { hero } = home;
 
 export function HomeHero() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    // [TODO: wire to the real waitlist/signup endpoint]
-    if (email.trim().length > 3 && email.includes("@")) {
-      console.log("[Kaloq waitlist signup]", { email });
-      setSubmitted(true);
-    }
-  }
-
   // -mt is the header's full flow height — h-16 plus its 1px bottom border —
   // otherwise a 1px strip of the white body shows above the hero
   return (
@@ -51,47 +36,14 @@ export function HomeHero() {
             {hero.sub}
           </p>
 
-          {submitted ? (
-            <div
-              role="status"
-              className="font-display-sans flex items-center gap-2.5 rounded-full border border-lime/40 bg-[#262A1C]/55 px-8 py-[18px] text-base font-medium leading-none text-lime backdrop-blur-md"
-            >
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                <circle cx="9" cy="9" r="8" stroke="currentColor" strokeWidth="1.5" />
-                <path
-                  d="M5.5 9.2l2.3 2.3 4.7-4.8"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              {hero.successMessage}
-            </div>
-          ) : (
-            <form
-              onSubmit={handleSubmit}
-              className="flex max-w-full gap-2 rounded-full border border-white/28 bg-white/16 p-[7px] backdrop-blur-lg"
-            >
-              <label htmlFor="hero-email" className="sr-only">
-                Work email
-              </label>
-              <input
-                id="hero-email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={hero.emailPlaceholder}
-                className="font-display-sans w-[min(280px,42vw)] min-w-0 bg-transparent px-4 text-[15px] text-white placeholder:text-white/65 focus:outline-none"
-              />
-              <button
-                type="submit"
-                className="font-display-sans shrink-0 whitespace-nowrap rounded-full bg-lime px-6 py-3.5 text-[15px] font-semibold leading-none text-[#1B4533] transition-colors duration-150 hover:bg-lime-hover"
-              >
-                {hero.submitLabel}
-              </button>
-            </form>
-          )}
+          <a
+            href={hero.ctaHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-display-sans inline-flex rounded-full bg-lime px-8 py-[18px] text-[15px] font-semibold leading-none text-[#1B4533] transition-colors duration-150 hover:bg-lime-hover"
+          >
+            {hero.submitLabel}
+          </a>
         </div>
       </div>
     </section>

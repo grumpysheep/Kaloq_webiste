@@ -5,6 +5,7 @@ import { FaqAccordion } from "@/components/ui/faq-accordion";
 import { Button } from "@/components/ui/button";
 import { SolutionHero } from "@/components/marketing/solution-hero";
 import { ScenarioFlow } from "@/components/marketing/scenario-flow";
+import { SolutionIcon } from "@/components/marketing/solution-icons";
 import { solutions } from "@/lib/content";
 
 type Solution = (typeof solutions)[keyof typeof solutions];
@@ -22,9 +23,9 @@ export function PersonalSolutionTemplate({ solution }: { solution: Solution }) {
           </FadeIn>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {solution.painPoints.map((pain, i) => (
-              <FadeIn key={pain} delay={i * 100} className="rounded-[22px] border border-[#E8E2D1] bg-white/65 p-7 shadow-[0_8px_25px_rgba(92,80,58,.04)]">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F0E9D7] font-mono text-[12px] text-[#7E6F4F]">0{i + 1}</div>
-                <p className="mt-6 text-[16px] leading-[1.55] text-[#0E2A1E]">{pain}</p>
+              <FadeIn key={pain.text} delay={i * 100} className="rounded-[22px] border border-[#E8E2D1] bg-white/65 p-7 shadow-[0_8px_25px_rgba(92,80,58,.04)]">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F0E9D7] text-[#7E6F4F]"><SolutionIcon name={pain.icon} className="h-[18px] w-[18px]" /></div>
+                <p className="mt-6 text-[16px] leading-[1.55] text-[#0E2A1E]">{pain.text}</p>
               </FadeIn>
             ))}
           </div>
@@ -40,7 +41,7 @@ export function PersonalSolutionTemplate({ solution }: { solution: Solution }) {
           <div className="mx-auto mt-14 grid max-w-[1040px] gap-10 md:grid-cols-3">
             {solution.features.map((feature, i) => (
               <FadeIn key={feature.title} delay={i * 100} className="border-t border-[#CFC7B4] pt-5">
-                <span className="font-mono text-[12px] text-[#7E6F4F]">0{i + 1}</span>
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F0E9D7] text-[#7E6F4F]"><SolutionIcon name={feature.icon} className="h-[18px] w-[18px]" /></div>
                 <h3 className="mt-5 text-[17px] font-semibold text-[#0E2A1E]">{feature.title}</h3>
                 <p className="mt-3 text-[14.5px] leading-[1.65] text-[#42544A]">{feature.description}</p>
               </FadeIn>
@@ -91,7 +92,7 @@ export function PersonalSolutionTemplate({ solution }: { solution: Solution }) {
           <h2 className="font-display text-[clamp(38px,4.4vw,56px)] font-normal leading-[1.06] tracking-[-0.01em] text-[#0E2A1E]">Keep your balance ready to spend.</h2>
           <p className="mt-4 max-w-[460px] text-[15.5px] leading-[1.6] text-[#42544A]">Start with your supported wallet balance and make more of everyday life.</p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <Button href="/contact" size="lg" className="bg-[#1B4533] text-white hover:bg-[#0E2A1E]">Get your card</Button>
+            <Button href="https://card.kaloq.com" size="lg" className="bg-[#1B4533] text-white hover:bg-[#0E2A1E]">Get your card</Button>
             <Link href="/products/card" className="inline-flex items-center justify-center rounded-full border border-[#BEB39C] bg-white/45 px-6 py-3.5 text-base font-semibold text-[#1B4533] hover:bg-white">Explore Kaloq Card</Link>
           </div>
         </FadeIn>

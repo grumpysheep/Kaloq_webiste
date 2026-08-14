@@ -62,7 +62,7 @@ function NavDropdown({ label, items }: { label: string; items: NavDropdownItem[]
                 className="block rounded-xl px-4 py-3 hover:bg-background-subtle"
               >
                 <div className="text-sm font-medium text-foreground">{item.label}</div>
-                <div className="mt-0.5 text-xs leading-snug text-foreground-muted">{item.description}</div>
+                <div className="mt-0.5 text-xs leading-snug text-foreground/40">{item.description}</div>
               </Link>
             ))}
           </div>
@@ -124,10 +124,7 @@ export function Header() {
 
         <div className="hidden items-center justify-end gap-7 md:flex">
           <LanguageToggle />
-          <Button href={nav.login.href} variant="ghost" className={overHero ? "text-white hover:bg-white/10" : ""}>
-            {nav.login.label}
-          </Button>
-          <Button href={nav.demo.href} variant="solid" className="bg-lime px-7 py-3 text-sm font-semibold text-[#1B4533] transition-colors duration-150 hover:bg-lime-hover">
+          <Button href={nav.demo.href} variant="solid" className="bg-lime px-7 py-3 text-sm font-semibold !text-[#1B4533] transition-colors duration-150 hover:bg-lime-hover">
             {nav.demo.label}
           </Button>
         </div>
@@ -168,18 +165,13 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
         <Link href={nav.pricing.href} onClick={onClose} className="block border-b border-border py-4 text-base font-medium text-foreground">
           {nav.pricing.label}
         </Link>
-        <MobileGroup title="Company" items={nav.company.map((c) => ({ ...c, description: "" }))} onNavigate={onClose} />
-
-        <div className="mt-6 flex items-center gap-4">
+        <div className="mt-6 flex items-center">
           <LanguageToggle className="text-foreground" />
-          <Link href={nav.login.href} onClick={onClose} className="block py-3 text-base font-medium text-foreground">
-            {nav.login.label}
-          </Link>
         </div>
       </div>
 
       <div className="border-t border-border p-6">
-        <Button href={nav.demo.href} variant="solid" size="lg" className="w-full">
+        <Button href={nav.demo.href} variant="solid" size="lg" className="w-full bg-lime !text-[#1B4533] hover:bg-lime-hover">
           {nav.demo.label}
         </Button>
       </div>

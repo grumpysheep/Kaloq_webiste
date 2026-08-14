@@ -168,7 +168,7 @@ export function CryptoFunding() {
                 </div>
                 <div className="font-mono text-[22px] text-[#26221A]">{funding.flow.balance.amount}</div>
               </div>
-              <span className="absolute -right-2.5 -top-[13px] animate-[cap-toast_6.8s_infinite] whitespace-nowrap rounded-full bg-lime px-[11px] py-1 text-xs font-semibold text-[#26221A]">
+              <span className="absolute -right-2.5 -top-[13px] animate-[cap-toast_6.8s_infinite] whitespace-nowrap rounded-full bg-lime px-[11px] py-1 text-xs font-semibold text-[#0E2A1E]">
                 {funding.flow.balance.toast}
               </span>
               <div className="mt-2.5 border-t border-[#E8E2D1] pt-2.5 text-xs text-[#7A8378]">{funding.flow.balance.caption}</div>

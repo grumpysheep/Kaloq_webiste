@@ -15,7 +15,7 @@ function CapabilityChip() {
   return (
     <span
       aria-hidden="true"
-      className="absolute right-[18px] top-[18px] flex h-8 w-8 items-center justify-center rounded-full border border-[#5C503A]/16 bg-white/55 text-[#26221A] transition-[background-color,transform] duration-[180ms] ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:bg-lime"
+      className="absolute right-[18px] top-[18px] flex h-8 w-8 items-center justify-center rounded-full border border-[#5C503A]/16 bg-white/55 text-[#0E2A1E] transition-[background-color,transform] duration-[180ms] ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:bg-lime"
     >
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M7 17 17 7" />
@@ -44,7 +44,7 @@ export function CapabilitiesBento() {
           {/* Row 1 — Receive / Convert */}
           <div className="relative grid grid-cols-[1.55fr_1fr] gap-[22px] max-[900px]:grid-cols-1">
             <Link
-              href="/products/payments"
+              href="/products/card"
               className={`${CARD_BASE} bg-[radial-gradient(620px_320px_at_100%_0%,rgba(232,196,104,.22),transparent_62%)]`}
             >
               <CapabilityChip />
@@ -81,7 +81,7 @@ export function CapabilitiesBento() {
                 </div>
 
                 <div className="relative min-w-[180px] rounded-2xl bg-white/82 px-5 py-4 shadow-[0_10px_26px_rgba(92,80,58,.14)] backdrop-blur-[6px]">
-                  <span className="absolute -right-2 -top-[14px] animate-[cap-toast_9s_infinite] rounded-full bg-lime px-[11px] py-1 text-xs font-semibold text-[#26221A]">
+                  <span className="absolute -right-2 -top-[14px] animate-[cap-toast_9s_infinite] rounded-full bg-lime px-[11px] py-1 text-xs font-semibold text-[#0E2A1E]">
                     +$2,500.00 received
                   </span>
                   <div className="text-xs text-[#7A8378]">Kaloq balance</div>
@@ -91,7 +91,7 @@ export function CapabilitiesBento() {
             </Link>
 
             <Link
-              href="/products/payments"
+              href="/products/global-account"
               className={`${CARD_BASE} bg-[radial-gradient(480px_280px_at_12%_100%,rgba(219,252,0,.18),transparent_62%)]`}
             >
               <CapabilityChip />
@@ -100,7 +100,8 @@ export function CapabilitiesBento() {
               </div>
               <div className="mt-auto min-w-0 pt-6">
                 <div className="mb-2.5 text-[13px] text-[#7A8378]">
-                  1 USDC → <span className="text-xs opacity-70">(hover)</span>
+                  <span>1 USDC →</span>
+                  <span className="ml-2 rounded-full bg-[#EAF1EC] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-[#25573F]">Coming Soon</span>
                 </div>
                 <div className="overflow-hidden border-y border-[#5C503A]/12 py-3.5 [mask-image:linear-gradient(90deg,transparent,#000_10%,#000_90%,transparent)]">
                   <div className="flex w-max animate-[cap-marquee_22s_linear_infinite] gap-9 font-mono text-[15px] [animation-play-state:paused] group-hover:[animation-play-state:running]">
@@ -111,7 +112,7 @@ export function CapabilitiesBento() {
                     ))}
                   </div>
                 </div>
-                <div className="mt-3 text-[13px] font-semibold text-[#9A6A12]">Mid-market · no FX markup</div>
+                <div className="mt-3 text-[13px] font-semibold text-[#25573F]">Account-level FX · Coming Soon</div>
               </div>
             </Link>
           </div>
@@ -119,7 +120,7 @@ export function CapabilitiesBento() {
           {/* Row 2 — Move / Spend */}
           <div className="relative mt-[22px] grid grid-cols-[1fr_1.55fr] gap-[22px] max-[900px]:grid-cols-1">
             <Link
-              href="/products/payments"
+              href="/products/global-account"
               className={`${CARD_BASE} bg-[radial-gradient(420px_320px_at_88%_92%,rgba(232,161,61,.20),transparent_65%)]`}
             >
               <CapabilityChip />
@@ -153,7 +154,6 @@ export function CapabilitiesBento() {
                   </span>
                 </div>
               </div>
-              <div className="mt-3.5 font-mono text-[13px] text-[#5C503A]">Median settlement · 4.2s</div>
             </Link>
 
             <Link

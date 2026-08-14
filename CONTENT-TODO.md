@@ -9,7 +9,6 @@ Almost everything lives in [`lib/content.ts`](lib/content.ts) — that's the sin
 | Placeholder | Location | Notes |
 |---|---|---|
 | `[TODO: production domain]` | `lib/content.ts:8` (`site.domain`) | Not currently wired into metadata — add when a domain is confirmed. |
-| `[TODO: app login URL]` | `lib/content.ts:11` (`site.loginUrl`) | Header "Log in" button currently points to `#`. |
 | `[TODO: Full registered legal entity name]`, `[TODO: registered address]` | `lib/content.ts:93` (`footer.legalBlock.entity`) | Footer legal block. |
 | MSB registration number | `lib/content.ts:95` (`footer.legalBlock.msb`) | "...registration number `[TODO: MSB number]`." |
 | Issuer / BIN sponsor disclosure | `lib/content.ts:97` (`footer.legalBlock.issuer`) | Card-issuing partner disclosure line. |
