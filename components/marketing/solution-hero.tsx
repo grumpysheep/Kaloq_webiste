@@ -38,12 +38,11 @@ function CardIcon() {
 function BalancePanel() {
   return (
     <div className="absolute bottom-8 left-1/2 w-[min(390px,calc(100%-32px))] -translate-x-1/2 rounded-[24px] border border-white/75 bg-[#FFFEFA]/90 p-5 text-[#0E2A1E] shadow-[0_22px_50px_rgba(75,65,42,.18)] backdrop-blur-md">
-      <div className="flex items-center justify-between">
+      <div>
         <div>
           <div className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#7A8378]">Kaloq balance</div>
           <div className="mt-1 font-mono text-[25px] tracking-[-0.04em]">Ready to spend</div>
         </div>
-        <span className="rounded-full bg-[#F4F9D9] px-3 py-1.5 text-[10px] font-semibold text-[#557000]">Illustrative flow</span>
       </div>
       <div className="mt-5 grid grid-cols-[1fr_auto_1fr] items-center gap-2">
         <div className="rounded-2xl border border-[#E8E2D1] bg-white/75 p-3">

@@ -27,6 +27,7 @@ export function Button({
   className = "",
   type,
   onClick,
+  disabled,
 }: {
   href?: string;
   children: ReactNode;
@@ -35,6 +36,7 @@ export function Button({
   className?: string;
   type?: "button" | "submit";
   onClick?: () => void;
+  disabled?: boolean;
 }) {
   const classes = `${base} ${variants[variant]} ${variant === "text" ? "" : sizes[size]} ${className}`;
 
@@ -55,7 +57,7 @@ export function Button({
   }
 
   return (
-    <button type={type ?? "button"} onClick={onClick} className={classes}>
+    <button type={type ?? "button"} onClick={onClick} disabled={disabled} className={classes}>
       {children}
     </button>
   );

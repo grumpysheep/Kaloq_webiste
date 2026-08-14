@@ -67,7 +67,7 @@ export function CardHero() {
         </h1>
         <p className="mx-auto mt-[22px] max-w-[560px] text-lg leading-[1.55] text-white/78">{hero.sub}</p>
         <div className="mt-[30px] flex flex-wrap justify-center gap-3">
-          <Button href={hero.primaryCta.href} className="bg-lime px-[30px] py-3.5 text-base font-semibold text-[#0E2A1E] hover:bg-lime-hover">
+          <Button href={hero.primaryCta.href} className="bg-lime px-[30px] py-3.5 text-base font-semibold !text-[#0E2A1E] hover:bg-lime-hover">
             {hero.primaryCta.label}
           </Button>
           <Link
