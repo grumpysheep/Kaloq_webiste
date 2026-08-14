@@ -6,35 +6,34 @@ import { useState } from "react";
 
 type GrowDirection = "left" | "right" | "both";
 
-// TODO: placeholder imagery — replace with real use-case photography (see CONTENT-TODO.md)
 const USE_CASES = [
   {
     label: "Stablecoin earners",
     caption: "Turn on-chain income into travel, subscriptions, shopping and everyday spending.",
     href: "/solutions/stablecoin-earners",
-    image: "/images/use-cases/hero-landscape.jpg",
-    objectPosition: "38% center",
+    image: "/images/use-cases/freelancers.jpg",
+    objectPosition: "57% center",
   },
   {
     label: "Cross-border living",
     caption: "Keep a dollar balance while you live, work or travel across borders.",
     href: "/solutions/cross-border-living",
-    image: "/images/use-cases/halftone-orb.jpg",
-    objectPosition: "center",
+    image: "/images/use-cases/cross-border-teams.jpg",
+    objectPosition: "58% center",
   },
   {
     label: "Dollar balance holders",
     caption: "Hold supported dollar stablecoins, then spend only what everyday life needs.",
     href: "/solutions/dollar-balance-holders",
-    image: "/images/use-cases/hero-landscape.jpg",
-    objectPosition: "78% center",
+    image: "/images/use-cases/everyday-business.jpg",
+    objectPosition: "51% center",
   },
   {
     label: "Global online spending",
     caption: "Use your supported stablecoin balance for eligible subscriptions, software and global online purchases.",
     href: "/solutions/global-online-spending",
-    image: "/images/use-cases/texture-sky.jpg",
-    objectPosition: "0% center",
+    image: "/images/use-cases/global-online-team.jpg",
+    objectPosition: "39% center",
   },
 ];
 
