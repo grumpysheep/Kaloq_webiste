@@ -1,14 +1,27 @@
+import Image from "next/image";
 import Link from "next/link";
 
-export function Logo({ className = "" }: { className?: string }) {
+export function Logo({
+  className = "",
+  variant = "dark",
+}: {
+  className?: string;
+  variant?: "light" | "dark";
+}) {
   return (
     <Link
       href="/"
-      className={`inline-flex items-center gap-0.5 text-2xl font-extrabold tracking-tight text-brand ${className}`}
+      className={`inline-flex items-center ${className}`}
       aria-label="Kaloq home"
     >
-      Kaloq
-      <span className="inline-block h-1.5 w-1.5 rounded-full bg-lime translate-y-2" aria-hidden="true" />
+      <Image
+        src={variant === "light" ? "/images/kaloq-logo-light.png" : "/images/kaloq-logo-dark.png"}
+        alt="Kaloq"
+        width={116}
+        height={40}
+        priority
+        className="h-8 w-auto"
+      />
     </Link>
   );
 }
