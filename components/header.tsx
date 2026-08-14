@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Logo } from "@/components/ui/logo";
 import { Button } from "@/components/ui/button";
 import { LanguageToggle } from "@/components/language-provider";
@@ -72,6 +73,7 @@ function NavDropdown({ label, items }: { label: string; items: NavDropdownItem[]
 }
 
 export function Header() {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [overHero, setOverHero] = useState(false);
 
@@ -84,7 +86,10 @@ export function Header() {
 
   useEffect(() => {
     const hero = document.querySelector("[data-hero-overlay]");
-    if (!hero) return;
+    if (!hero) {
+      const frame = window.requestAnimationFrame(() => setOverHero(false));
+      return () => window.cancelAnimationFrame(frame);
+    }
 
     const update = () => {
       const rect = hero.getBoundingClientRect();
@@ -98,7 +103,7 @@ export function Header() {
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
     };
-  }, []);
+  }, [pathname]);
 
   const overlayClass = overHero
     ? "border-transparent bg-transparent text-white"
@@ -107,7 +112,7 @@ export function Header() {
   return (
     <header className={`sticky top-0 z-50 border-b transition-colors duration-300 ${overlayClass}`}>
       <div className="mx-auto grid h-16 max-w-[1440px] grid-cols-[1fr_auto_1fr] items-center px-6 md:px-10">
-        <Logo className={overHero ? "text-white" : ""} />
+        <Logo variant={overHero ? "light" : "dark"} />
 
         <nav className="hidden items-center gap-9 md:flex" aria-label="Main">
           <NavDropdown label="Products" items={nav.products} />
