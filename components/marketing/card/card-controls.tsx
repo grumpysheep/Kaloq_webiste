@@ -83,7 +83,7 @@ export function CardControls() {
 
         <div
           className={`absolute -top-[18px] -right-10 whitespace-nowrap rounded-full border px-4 py-[9px] text-[12.5px] font-semibold shadow-[0_12px_30px_rgba(92,80,58,.22)] transition-colors duration-[350ms] ${
-            frozen ? "border-[#CDC4A9] bg-white text-[#42544A]" : "border-transparent bg-lime text-[#26221A]"
+            frozen ? "border-[#CDC4A9] bg-white text-[#42544A]" : "border-transparent bg-lime text-[#0E2A1E]"
           }`}
         >
           {frozen ? controls.toastDeclined : controls.toastApproved}

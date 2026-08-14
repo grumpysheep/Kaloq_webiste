@@ -32,22 +32,11 @@ export default function PricingPage() {
         </FadeIn>
       </Section>
 
-      <Section className="py-20">
-        <FadeIn className="mx-auto max-w-3xl rounded-[28px] border border-[#E8E2D1] bg-white/65 px-7 py-9 md:px-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#7E6F4F]">Before you spend</p>
-          <h2 className="mt-3 font-display text-[clamp(36px,4vw,52px)] font-normal leading-[1.06] tracking-[-0.01em] text-[#0E2A1E]">{pricing.costFactors.heading}</h2>
-          <ul className="mt-7 grid gap-4 md:grid-cols-2">
-            {pricing.costFactors.items.map((item) => <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-[#42544A]"><span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#A5C63B]" />{item}</li>)}
-          </ul>
-          <p className="mt-7 border-t border-[#E8E2D1] pt-5 text-xs leading-relaxed text-[#6E756C]">Indicative figures are provided for planning only. The in-app confirmation page and formal fee schedule determine the final rate for your account, region, asset, and transaction.</p>
-        </FadeIn>
-      </Section>
-
       <Section className="px-6 py-10 md:py-16">
         <FadeIn className="mx-auto flex max-w-[1160px] flex-col items-center rounded-[32px] bg-[#E9E2D1] px-6 py-14 text-center md:py-18">
           <h2 className="font-display text-[clamp(38px,4.4vw,56px)] font-normal leading-[1.06] tracking-[-0.01em] text-[#0E2A1E]">Ready to make your balance spendable?</h2>
           <p className="mt-4 max-w-[480px] text-[15.5px] leading-[1.6] text-[#42544A]">Start with supported stablecoins and review the final cost before you confirm.</p>
-          <Button href="/contact" size="lg" className="mt-7 bg-[#1B4533] text-white hover:bg-[#0E2A1E]">Get your card</Button>
+          <Button href="https://card.kaloq.com" size="lg" className="mt-7 bg-[#1B4533] text-white hover:bg-[#0E2A1E]">Get your card</Button>
         </FadeIn>
       </Section>
 
