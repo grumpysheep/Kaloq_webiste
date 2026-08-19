@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/components/language-provider";
 import { productCard } from "@/lib/content";
 
 function WalletIcon() {
@@ -60,6 +61,7 @@ function Pipe({ delayed = false }: { delayed?: boolean }) {
 
 export function CryptoFunding() {
   const { funding } = productCard;
+  const { language } = useLanguage();
   const [active, setActive] = useState(0);
   const manualRef = useRef(false);
 
@@ -87,8 +89,9 @@ export function CryptoFunding() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#7E6F4F]">{funding.eyebrow}</p>
             <h2 className="mt-3 max-w-[420px] font-display text-[clamp(38px,4.4vw,48px)] font-normal leading-[1.06] tracking-[-0.01em] text-[#0E2A1E]">
-              {funding.heading}
-              <em className="bg-[linear-gradient(transparent_68%,#DBFC00_68%)] px-[3px] not-italic italic">{funding.headingAccent}</em>.
+              {language === "zh" ? funding.heading.trimEnd() : funding.heading}
+              <em className="bg-[linear-gradient(transparent_68%,#DBFC00_68%)] px-[3px] not-italic italic">{funding.headingAccent}</em>
+              {language === "zh" ? "。" : "."}
             </h2>
             <p className="mt-[18px] max-w-[420px] text-[15.5px] leading-[1.6] text-[#42544A]">{funding.copy}</p>
           </div>

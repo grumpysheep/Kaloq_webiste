@@ -1,14 +1,19 @@
+"use client";
+
+import { useLanguage } from "@/components/language-provider";
 import { productCard } from "@/lib/content";
 
 export function GlobalUse() {
   const { global } = productCard;
+  const { language } = useLanguage();
   return (
     <section className="px-8 py-[110px]">
       <div className="mx-auto max-w-[1160px]">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#7E6F4F]">{global.eyebrow}</p>
         <h2 className="mt-3 font-display text-[clamp(38px,4.4vw,48px)] font-normal leading-[1.06] tracking-[-0.01em] text-[#0E2A1E]">
-          {global.heading}
-          <em className="bg-[linear-gradient(transparent_68%,#DBFC00_68%)] px-[3px] not-italic italic">{global.headingAccent}</em>.
+          {language === "zh" ? global.heading.trimEnd() : global.heading}
+          <em className="bg-[linear-gradient(transparent_68%,#DBFC00_68%)] px-[3px] not-italic italic">{global.headingAccent}</em>
+          {language === "zh" ? "。" : "."}
         </h2>
         <p className="mt-[18px] max-w-[560px] text-[15.5px] leading-[1.6] text-[#42544A]">{global.copy}</p>
 
