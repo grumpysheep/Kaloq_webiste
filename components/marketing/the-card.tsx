@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { BrandCard } from "@/components/ui/brand-card";
 
 const STEPS = [
   {
@@ -19,32 +20,12 @@ const STEPS = [
 
 function PayCard() {
   return (
-    <div className="absolute left-1/2 top-1/2 h-[476px] w-[300px] -ml-[150px] -mt-[238px] animate-[card-float_6s_ease-in-out_infinite]">
-      <div className="absolute inset-0 overflow-hidden rounded-[20px] border border-[#E8E2D1] bg-white shadow-[0_40px_80px_rgba(92,80,58,.26)]">
-        <div className="absolute inset-0 bg-[linear-gradient(190deg,rgba(219,252,0,.14)_0%,rgba(255,255,255,0)_42%)]" />
-        <div className="absolute -right-[30px] bottom-9 flex gap-3 rotate-[-24deg]">
-          <div className="h-[92px] w-3.5 rounded-[7px] bg-lime" />
-          <div className="h-[130px] w-3.5 rounded-[7px] bg-lime opacity-70" />
-          <div className="h-[74px] w-3.5 rounded-[7px] bg-[#D5CBAF]" />
-        </div>
-        <div className="relative flex h-full flex-col p-6.5">
-          <div className="flex items-start justify-between">
-            <span className="inline-flex items-center gap-0.5 text-xl font-extrabold tracking-tight text-brand">
-              Kaloq
-              <span aria-hidden="true" className="inline-block h-1.5 w-1.5 translate-y-1.5 rounded-full bg-lime" />
-            </span>
-            <div className="h-[31px] w-[42px] rounded-md border border-[#CDC4A9] bg-[linear-gradient(135deg,#E6DFCC,#BFB18D)]" />
-          </div>
-          <div className="mt-auto">
-            <div className="font-mono text-[15px] tracking-[2.4px] text-[#0E2A1E]">5312 4420</div>
-            <div className="font-mono text-[15px] tracking-[2.4px] text-[#0E2A1E]">8890 4242</div>
-            <div className="mt-3.5 flex justify-between font-mono text-[11.5px] text-[#42544A]">
-              <span>K. HOLDER</span>
-              <span>09/29</span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div className="absolute left-1/2 top-1/2 w-[350px] max-w-[72%] -translate-x-1/2 -translate-y-1/2 animate-[card-float_6s_ease-in-out_infinite]">
+      <BrandCard
+        alt="Kaloq signature physical card"
+        className="w-full rounded-[20px] border border-white/15 shadow-[0_40px_80px_rgba(10,25,18,.3)]"
+        sizes="(max-width: 640px) 72vw, 350px"
+      />
     </div>
   );
 }

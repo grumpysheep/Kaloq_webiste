@@ -1,17 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { BrandCard } from "@/components/ui/brand-card";
 import { productCard } from "@/lib/content";
-
-function ContactlessIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(60,50,40,.6)" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true">
-      <path d="M8.5 8.5a5 5 0 0 1 0 7" />
-      <path d="M12 5.5a9 9 0 0 1 0 13" />
-      <path d="M15.5 2.5a13 13 0 0 1 0 19" />
-    </svg>
-  );
-}
 
 function FreezeIcon({ className = "" }: { className?: string }) {
   return (
@@ -50,27 +41,13 @@ export function CardControls() {
       </h2>
       <p className="mx-auto mt-[18px] max-w-[460px] text-[15.5px] leading-[1.6] text-[#42544A]">{controls.copy}</p>
 
-      <div className="relative mx-auto mt-[52px] w-[420px] max-w-full">
+      <div className="relative mx-auto mt-[52px] w-[280px] max-w-full">
         <div
-          className={`relative h-[264px] w-full overflow-hidden rounded-[22px] shadow-[0_30px_70px_rgba(92,80,58,.24)] transition-[filter,opacity] duration-[450ms] ease-in-out ${
+          className={`relative aspect-[2551/4045] w-full overflow-hidden rounded-[22px] shadow-[0_30px_70px_rgba(92,80,58,.24)] transition-[filter,opacity] duration-[450ms] ease-in-out ${
             frozen ? "opacity-60 grayscale-[.92]" : ""
           }`}
         >
-          <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(118deg,#FBE7C6_0%,#F6BC96_22%,#EF9484_44%,#EFB1D0_62%,#F4D9A6_84%,#FBF3DC_100%)]" />
-          <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(100deg,rgba(255,255,255,.6)_6%,rgba(255,255,255,0)_34%,rgba(255,255,255,.32)_52%,rgba(255,255,255,0)_74%)]" />
-          <div className="relative flex h-full flex-col p-[26px_28px] text-left">
-            <div className="flex items-start justify-between">
-              <span className="inline-flex items-center gap-0.5 text-lg font-extrabold tracking-tight text-brand">
-                Kaloq
-                <span aria-hidden="true" className="inline-block h-1.5 w-1.5 translate-y-1.5 rounded-full bg-lime" />
-              </span>
-              <ContactlessIcon />
-            </div>
-            <div className="mt-auto flex items-baseline justify-between">
-              <span className="font-mono text-sm tracking-[2.4px] text-[#0E2A1E]">·· {controls.card.last4}</span>
-              <span className="font-mono text-[11.5px] text-[#42544A]">{controls.card.expiry}</span>
-            </div>
-          </div>
+          <BrandCard alt="Kaloq signature physical card" className="absolute inset-0 h-full w-full rounded-[22px]" sizes="280px" />
           <div
             className={`absolute left-1/2 top-3.5 inline-flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full bg-[#0E2A1E] px-4 py-1.5 text-xs font-semibold text-white transition-opacity duration-[350ms] ${
               frozen ? "opacity-100" : "opacity-0"

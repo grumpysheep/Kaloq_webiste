@@ -1,44 +1,17 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { BrandCard } from "@/components/ui/brand-card";
 import { productCard } from "@/lib/content";
 
-function ContactlessIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="rgba(60,50,40,.55)" strokeWidth="1.8" strokeLinecap="round" className={className} aria-hidden="true">
-      <path d="M8.5 8.5a5 5 0 0 1 0 7" />
-      <path d="M12 5.5a9 9 0 0 1 0 13" />
-      <path d="M15.5 2.5a13 13 0 0 1 0 19" />
-    </svg>
-  );
-}
-
 function HeroCardVisual() {
-  const { card } = productCard.hero;
   return (
     <div className="animate-[kq-hero-card-float_7s_ease-in-out_infinite]">
-      <div className="relative h-[452px] w-[720px] overflow-hidden rounded-[28px] bg-white shadow-[0_60px_120px_rgba(10,25,18,.5)]">
-        <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(190deg,rgba(219,252,0,.16)_0%,rgba(255,255,255,0)_46%)]" />
-        <div aria-hidden="true" className="absolute -right-[70px] bottom-20 flex gap-[26px] rotate-[-24deg]">
-          <i className="block h-[210px] w-8 rounded-2xl bg-lime not-italic" />
-          <i className="block h-[300px] w-8 rounded-2xl bg-lime opacity-70 not-italic" />
-          <i className="block h-[170px] w-8 rounded-2xl bg-[#D5CBAF] not-italic" />
-        </div>
-        <div className="relative flex h-full flex-col p-[44px_48px] text-left">
-          <div className="flex items-start justify-between">
-            <span className="inline-flex items-center gap-1 text-[26px] font-extrabold tracking-tight text-brand">
-              Kaloq
-              <span aria-hidden="true" className="inline-block h-2 w-2 translate-y-2.5 rounded-full bg-lime" />
-            </span>
-            <ContactlessIcon />
-          </div>
-          <div className="mt-9 h-14 w-[76px] rounded-[10px] border border-[#CDC4A9] bg-[linear-gradient(135deg,#E6DFCC,#BFB18D)]" />
-          <div className="mt-auto font-mono text-2xl tracking-[4px] text-[#0E2A1E]">{card.pan}</div>
-          <div className="mt-[18px] flex justify-between font-mono text-base text-[#42544A]">
-            <span>{card.holder}</span>
-            <span>{card.expiry}</span>
-          </div>
-        </div>
-      </div>
+      <BrandCard
+        alt="Kaloq signature physical card"
+        className="w-[430px] rounded-[28px] shadow-[0_60px_120px_rgba(10,25,18,.5)]"
+        priority
+        sizes="430px"
+      />
     </div>
   );
 }
@@ -48,7 +21,7 @@ export function CardHero() {
   return (
     <section
       data-hero-overlay
-      className="relative -mt-[calc(4rem+1px)] h-[1100px] overflow-hidden bg-[#0E2A1E] text-center"
+      className="relative -mt-[calc(4rem+1px)] h-[1300px] overflow-hidden bg-[#0E2A1E] text-center"
     >
       <div aria-hidden="true" className="card-hero-bg absolute inset-0" />
       <div aria-hidden="true" className="card-hero-dots absolute inset-0 opacity-[.28]" />
@@ -80,7 +53,7 @@ export function CardHero() {
       </div>
 
       <div className="absolute inset-x-0 bottom-[84px] z-[4] flex justify-center px-4">
-        <div className="origin-bottom scale-[0.46] sm:scale-[0.68] md:scale-[0.86] lg:scale-100">
+        <div className="origin-bottom scale-[0.52] sm:scale-[0.7] md:scale-[0.86] lg:scale-100">
           <HeroCardVisual />
         </div>
       </div>
