@@ -36,9 +36,9 @@ export function CardControls() {
     <section className="px-8 py-[110px] text-center">
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#7E6F4F]">{controls.eyebrow}</p>
       <h2 className="mt-3 font-display text-[clamp(38px,4.4vw,48px)] font-normal leading-[1.06] tracking-[-0.01em] text-[#0E2A1E]">
-        {controls.heading}
-        <em className="bg-[linear-gradient(transparent_68%,#DBFC00_68%)] px-[3px] not-italic italic">{controls.headingAccent}</em>.
-      </h2>
+            {controls.heading}
+            <em className="bg-[linear-gradient(transparent_68%,#DBFC00_68%)] px-[3px] not-italic italic">{controls.headingAccent}</em>
+          </h2>
       <p className="mx-auto mt-[18px] max-w-[460px] text-[15.5px] leading-[1.6] text-[#42544A]">{controls.copy}</p>
 
       <div className="relative mx-auto mt-[52px] w-[280px] max-w-full">

@@ -32,7 +32,7 @@ export function CapabilitiesBento() {
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#7E6F4F]">Capabilities</p>
         <h2 className="mt-3 mb-[52px] font-display text-[clamp(38px,4.4vw,58px)] font-normal leading-[1.05] tracking-[-0.01em] text-[#0E2A1E]">
           Receive, convert, move,{" "}
-          <em className="bg-[linear-gradient(transparent_68%,#DBFC00_68%)] px-[3px] not-italic italic">spend</em>.
+          <em className="bg-[linear-gradient(transparent_68%,#DBFC00_68%)] px-[3px] not-italic italic">spend</em>
         </h2>
 
         <div className="relative">

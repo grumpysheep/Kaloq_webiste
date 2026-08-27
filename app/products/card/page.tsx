@@ -11,7 +11,7 @@ import { CloserBand } from "@/components/marketing/card/closer-band";
 import { productCard } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Kaloq Card — Everyday spending, funded by crypto",
+  title: "Kaloq Card — Everyday spending, funded by supported digital assets",
   description: productCard.hero.sub,
 };
 

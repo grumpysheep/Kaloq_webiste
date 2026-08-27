@@ -36,7 +36,6 @@ export function CardHero() {
           {hero.h1Line1}
           <br />
           {hero.h1Line2} <em className="not-italic italic text-lime">{hero.h1Accent}</em>
-          <span className="text-white">.</span>
         </h1>
         <p className="mx-auto mt-[22px] max-w-[560px] text-lg leading-[1.55] text-white/78">{hero.sub}</p>
         <div className="mt-[30px] flex flex-wrap justify-center gap-3">

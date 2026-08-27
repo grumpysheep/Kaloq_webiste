@@ -22,7 +22,10 @@ export function HomeCta() {
       <div className="relative">
         <h2 className="font-display text-[clamp(42px,5vw,64px)] font-normal leading-[1.05]">
           {readyCta.heading}
-          <em className="not-italic italic text-lime">{readyCta.headingAccent}</em>?
+          <em className="not-italic italic text-lime">
+            <span className="i18n-en-only">{readyCta.headingAccent}</span>
+            <span className="i18n-zh-only">体验</span>
+          </em>
         </h2>
         <p className="mt-4 text-base text-white/78">{readyCta.sub}</p>
         <div className="mt-[34px] flex flex-wrap justify-center gap-3">

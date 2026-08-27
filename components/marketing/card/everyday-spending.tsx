@@ -54,7 +54,6 @@ export function EverydaySpending() {
           <h2 className="mt-3 font-display text-[40px] font-normal leading-[1.06] tracking-[-0.01em] text-[#0E2A1E]">
             {language === "zh" ? everyday.heading.trimEnd() : everyday.heading}
             <em className="bg-[linear-gradient(transparent_68%,#DBFC00_68%)] px-[3px] not-italic italic">{everyday.headingAccent}</em>
-            {language === "zh" ? "。" : "."}
           </h2>
           <p className="mb-[30px] mt-[18px] max-w-[420px] text-[15.5px] leading-[1.6] text-[#42544A]">{everyday.copy}</p>
 

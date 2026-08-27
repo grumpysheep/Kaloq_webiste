@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { home } from "@/lib/content";
 
 export function TrustBand() {
@@ -10,7 +9,7 @@ export function TrustBand() {
         <div className="grid grid-cols-2 items-start gap-y-6 md:grid-cols-[1.15fr_1fr_1fr_1fr_1fr] md:gap-y-0">
           <h2 className="col-span-2 pr-0 pb-8 font-display text-[40px] font-normal leading-[1.05] tracking-[-0.01em] md:col-span-1 md:pr-10 md:pb-0">
             {trustBand.heading}
-            <em className="not-italic italic text-lime">{trustBand.headingAccent}</em>.
+            <em className="not-italic italic text-lime">{trustBand.headingAccent}</em>
           </h2>
           {trustBand.pillars.map((pillar) => (
             <div key={pillar.label} className="border-l border-white/16 px-5 last:pr-0 md:px-6">
@@ -27,13 +26,9 @@ export function TrustBand() {
           <div className="flex-none text-xs font-semibold uppercase tracking-[0.14em] text-white/45">
             {trustBand.partnersLabel}
           </div>
-          <Image
-            src="/images/trust/partner-interlace.png"
-            alt="Interlace"
-            width={110}
-            height={26}
-            className="h-[26px] w-auto opacity-[.85] brightness-0 invert"
-          />
+              <span className="text-sm font-semibold text-white sm:text-base">
+                {trustBand.partnerName}
+              </span>
         </div>
       </div>
     </section>

@@ -9,7 +9,7 @@ const STEPS = [
     body: "A virtual card the moment you sign up. No paperwork, no waiting.",
   },
   {
-    title: "Add it to Apple Pay or Google Pay",
+      title: "Mobile Wallet Payment",
     body: "Tap your phone anywhere cards are accepted — 150+ countries.",
   },
   {
@@ -80,7 +80,6 @@ export function TheCard() {
             <em className="bg-[linear-gradient(transparent_68%,#DBFC00_68%)] px-[3px] not-italic italic">
               spending
             </em>
-            .
           </h2>
 
           <div className="mt-auto max-w-[400px] max-[900px]:mt-10">

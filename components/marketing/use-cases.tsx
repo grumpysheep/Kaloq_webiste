@@ -76,7 +76,7 @@ export function UseCases() {
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#7E6F4F]">Use cases</p>
           <h2 className="mt-3 font-display text-[clamp(38px,4.4vw,58px)] font-normal leading-[1.05] tracking-[-0.01em] text-[#0E2A1E]">
             Built for how you{" "}
-            <em className="bg-[linear-gradient(transparent_68%,#DBFC00_68%)] px-[3px] not-italic italic">live</em>.
+            <em className="bg-[linear-gradient(transparent_68%,#DBFC00_68%)] px-[3px] not-italic italic">live</em>
           </h2>
         </div>
         <div className="flex flex-none gap-2.5">
