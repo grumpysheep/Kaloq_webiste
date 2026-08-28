@@ -233,19 +233,18 @@ export const finalCtaGeneric = {
 export const productCard = {
   hero: {
     eyebrow: "Kaloq Card",
-    h1Line1: "Your crypto, ready for",
+    h1Line1: "Your supported digital assets, ready for",
     h1Line2: "everyday",
     h1Accent: "spending",
     sub: "Fund your card with supported digital assets and use it for everyday purchases — online, in stores, and while traveling.",
     primaryCta: { label: "Get your card", href: "https://card.kaloq.com" },
     secondaryCta: { label: "Learn more", href: "#everyday-spending" },
-    card: { pan: "5312 4420 8890 4242", holder: "K. HOLDER", expiry: "09/29" },
     compliance: "Kaloq Card is issued by licensed, regulated partners.",
   },
   benefits: [
     { title: "Spend with confidence", description: "Use your card for everyday purchases with reliable transaction processing." },
     { title: "Manage everything in real time", description: "View transactions, manage your balance, and control your card directly from the app." },
-    { title: "Fund with crypto", description: "Add funds using supported stablecoins or digital assets without a complicated payment process." },
+    { title: "Fund with supported digital assets", description: "Add funds using supported stablecoins or digital assets without a complicated payment process." },
     { title: "Use it around the world", description: "Pay online and in stores across supported countries, currencies, and merchant categories." },
   ],
   everyday: {
@@ -277,8 +276,8 @@ export const productCard = {
     },
   },
   funding: {
-    eyebrow: "Crypto funding",
-    heading: "From crypto balance to everyday ",
+    eyebrow: "Digital asset funding",
+    heading: "From digital asset balance to everyday ",
     headingAccent: "purchases",
     copy: "Start spending in three simple steps — no complicated payment process.",
     steps: [
@@ -387,7 +386,7 @@ export const productCard = {
   ] satisfies FaqItem[],
   faqMoreLink: { label: "View all questions", href: "#" }, // [TODO: link to a full FAQ page once one exists]
   closer: {
-    heading: "Make your crypto ",
+    heading: "Make your supported digital assets ",
     headingAccent: "spendable",
     copy: "Apply for your card, add supported digital assets, and start spending online and in stores.",
     primaryCta: { label: "Get your card", href: "https://card.kaloq.com" },
@@ -519,7 +518,7 @@ const sharedStablecoinFlow = [
 
 const solutionFaq = [
   ...personalSolutionFaq,
-  { question: "Does the merchant receive crypto?", answer: "No. In the card transaction flow, supported stablecoins are converted and the merchant receives ordinary fiat currency." },
+  { question: "Does the merchant receive digital assets?", answer: "No. In the card transaction flow, supported stablecoins are converted and the merchant receives ordinary fiat currency." },
   { question: "What checks apply?", answer: "KYC, transaction monitoring, source-of-funds review, and restrictions for certain regions or high-risk merchants may apply." },
 ] satisfies FaqItem[];
 

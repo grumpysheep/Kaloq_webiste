@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { CardHero } from "@/components/marketing/card/card-hero";
 import { BenefitsRow } from "@/components/marketing/card/benefits-row";
 import { EverydaySpending } from "@/components/marketing/card/everyday-spending";
-import { CryptoFunding } from "@/components/marketing/card/crypto-funding";
+import { DigitalAssetFunding } from "@/components/marketing/card/digital-asset-funding";
 import { GlobalUse } from "@/components/marketing/card/global-use";
 import { CardControls } from "@/components/marketing/card/card-controls";
 import { FeesSection } from "@/components/marketing/card/fees-section";
@@ -25,7 +25,7 @@ export default function CardPage() {
       <div className="card-canvas relative">
         <BenefitsRow />
         <EverydaySpending />
-        <CryptoFunding />
+        <DigitalAssetFunding />
         <GlobalUse />
         <CardControls />
         <FeesSection />

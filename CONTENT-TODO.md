@@ -53,7 +53,7 @@ All three solution pages share the same TODO shape:
 
 | Placeholder | Location |
 |---|---|
-| Customer quote + attribution — Crypto Companies | `lib/content.ts:383-384` |
+| Customer quote + attribution — Digital Asset Companies | `lib/content.ts:383-384` |
 | Customer quote + attribution — Cross-Border Trade | `lib/content.ts:407-408` |
 | Customer quote + attribution — Global Teams | `lib/content.ts:430-431` |
 | Legal review flag on SWIFT/fee-avoidance claims | `lib/content.ts:405` (`crossBorderTrade.disclaimerNote`) — get these specific claims reviewed before removing the flag. |

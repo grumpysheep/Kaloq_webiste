@@ -7,7 +7,7 @@ export function CloserBand() {
     <section className="bg-[#E9EFD6] px-8 py-[130px] text-center">
       <h2 className="font-display text-[clamp(42px,5vw,60px)] font-normal leading-[1.05] text-[#0E2A1E]">
             {closer.heading}
-            <em className="bg-[linear-gradient(transparent_68%,#DBFC00_68%)] px-[5px] not-italic italic">{closer.headingAccent}</em>
+            <em className="localized-hero-accent bg-[linear-gradient(transparent_68%,#DBFC00_68%)] px-[5px] italic">{closer.headingAccent}</em>
           </h2>
       <p className="mx-auto mt-4 max-w-[520px] text-base text-[#42544A]">{closer.copy}</p>
       <div className="mt-[34px] flex items-center justify-center gap-[22px]">

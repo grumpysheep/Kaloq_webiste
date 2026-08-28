@@ -21,7 +21,7 @@ export function CardHero() {
   return (
     <section
       data-hero-overlay
-      className="relative -mt-[calc(4rem+1px)] h-[1300px] overflow-hidden bg-[#0E2A1E] text-center"
+      className="relative -mt-[calc(4rem+1px)] h-[1240px] overflow-hidden bg-[#0E2A1E] text-center sm:h-[1320px] lg:h-[1380px]"
     >
       <div aria-hidden="true" className="card-hero-bg absolute inset-0" />
       <div aria-hidden="true" className="card-hero-dots absolute inset-0 opacity-[.28]" />
@@ -30,15 +30,17 @@ export function CardHero() {
         className="absolute left-1/2 top-[30%] h-[480px] w-[900px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(219,252,0,.14),transparent_70%)] blur-[60px]"
       />
 
-      <div className="relative z-[4] px-6 pt-[150px]">
+      <div className="relative z-[5] mx-auto max-w-[1280px] px-5 pt-[132px] sm:px-8 sm:pt-[148px] lg:px-12 lg:pt-[156px]">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/60">{hero.eyebrow}</p>
-        <h1 className="mx-auto mt-4 max-w-3xl font-display text-[clamp(48px,5vw,64px)] font-normal leading-[1.06] tracking-[-0.01em] text-white">
-          {hero.h1Line1}
-          <br />
-          {hero.h1Line2} <em className="not-italic italic text-lime">{hero.h1Accent}</em>
+        <h1 className="mx-auto mt-5 max-w-[1120px] text-balance font-display text-[clamp(46px,6vw,84px)] font-normal leading-[0.98] tracking-[-0.025em] text-white">
+          <span className="block">{hero.h1Line1}</span>
+          <span className="mt-1 block sm:mt-2">
+            {hero.h1Line2}{" "}
+            <em className="localized-hero-accent italic text-lime">{hero.h1Accent}</em>
+          </span>
         </h1>
-        <p className="mx-auto mt-[22px] max-w-[560px] text-lg leading-[1.55] text-white/78">{hero.sub}</p>
-        <div className="mt-[30px] flex flex-wrap justify-center gap-3">
+        <p className="mx-auto mt-6 max-w-[680px] text-base leading-[1.65] text-white/78 sm:text-lg">{hero.sub}</p>
+        <div className="mt-7 flex flex-wrap justify-center gap-3 sm:mt-8">
           <Button href={hero.primaryCta.href} className="bg-lime px-[30px] py-3.5 text-base font-semibold !text-[#0E2A1E] hover:bg-lime-hover">
             {hero.primaryCta.label}
           </Button>
@@ -51,8 +53,8 @@ export function CardHero() {
         </div>
       </div>
 
-      <div className="absolute inset-x-0 bottom-[84px] z-[4] flex justify-center px-4">
-        <div className="origin-bottom scale-[0.52] sm:scale-[0.7] md:scale-[0.86] lg:scale-100">
+      <div className="absolute inset-x-0 bottom-[84px] z-[4] flex justify-center px-4 sm:bottom-[90px] lg:bottom-[96px]">
+        <div className="origin-bottom scale-[0.54] sm:scale-[0.72] md:scale-[0.88] lg:scale-100">
           <HeroCardVisual />
         </div>
       </div>

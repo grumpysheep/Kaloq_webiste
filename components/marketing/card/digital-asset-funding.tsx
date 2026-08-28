@@ -59,7 +59,7 @@ function Pipe({ delayed = false }: { delayed?: boolean }) {
   );
 }
 
-export function CryptoFunding() {
+export function DigitalAssetFunding() {
   const { funding } = productCard;
   const { language } = useLanguage();
   const [active, setActive] = useState(0);
