@@ -7,9 +7,9 @@ export function FeesSection() {
     <section className="px-8 pb-20 pt-[100px]">
       <div className="mx-auto max-w-[1160px] text-center">
         <h2 className="font-display text-[clamp(38px,4.4vw,48px)] font-normal leading-[1.06] tracking-[-0.01em] text-[#0E2A1E]">
-          {fees.heading}
-          <em className="bg-[linear-gradient(transparent_68%,#DBFC00_68%)] px-[3px] not-italic italic">{fees.headingAccent}</em>.
-        </h2>
+            {fees.heading}
+            <em className="bg-[linear-gradient(transparent_68%,#DBFC00_68%)] px-[3px] not-italic italic">{fees.headingAccent}</em>
+          </h2>
         <p className="mx-auto mt-[18px] max-w-[460px] text-[15.5px] leading-[1.6] text-[#42544A]">{fees.copy}</p>
 
         <div className="mx-auto mt-[42px] max-w-[760px] text-left">

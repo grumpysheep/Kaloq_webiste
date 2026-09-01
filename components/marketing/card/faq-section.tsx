@@ -11,7 +11,7 @@ export function FaqSection() {
     <section className="px-8 pb-[110px] pt-20">
       <div className="mx-auto max-w-[1160px] text-center">
         <h2 className="font-display text-[clamp(38px,4.4vw,48px)] font-normal leading-[1.06] tracking-[-0.01em] text-[#0E2A1E]">
-          Questions, <em className="bg-[linear-gradient(transparent_68%,#DBFC00_68%)] px-[3px] not-italic italic">answered</em>.
+          Questions, <em className="bg-[linear-gradient(transparent_68%,#DBFC00_68%)] px-[3px] not-italic italic">answered</em>
         </h2>
 
         <div className="mx-auto mt-9 max-w-[760px] text-left">

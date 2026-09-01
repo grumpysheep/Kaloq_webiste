@@ -27,7 +27,7 @@ export function HomeHero() {
           <h1 className="font-display text-[clamp(48px,5.7vw,82px)] font-normal leading-[1.08] tracking-[-0.015em] text-white [text-shadow:0_2px_24px_rgba(38,42,28,0.28)] [text-wrap:balance]">
             {hero.h1Line1}
             <br />
-            <em className="italic text-lime">{hero.h1Accent}</em>.
+            <em className="localized-hero-accent italic text-lime">{hero.h1Accent}</em>
           </h1>
         </div>
 

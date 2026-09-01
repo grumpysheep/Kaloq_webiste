@@ -112,6 +112,7 @@ export const home = {
       { figure: "1:1", accent: true, label: "Reserves", body: "Attested monthly by independent auditors." },
     ],
     partnersLabel: "Custody & banking partners",
+    partnerName: "Interlace",
   },
   howItWorks: {
     heading: "How it works",
@@ -232,19 +233,18 @@ export const finalCtaGeneric = {
 export const productCard = {
   hero: {
     eyebrow: "Kaloq Card",
-    h1Line1: "Your crypto, ready for",
+    h1Line1: "Your supported digital assets, ready for",
     h1Line2: "everyday",
     h1Accent: "spending",
     sub: "Fund your card with supported digital assets and use it for everyday purchases — online, in stores, and while traveling.",
     primaryCta: { label: "Get your card", href: "https://card.kaloq.com" },
     secondaryCta: { label: "Learn more", href: "#everyday-spending" },
-    card: { pan: "5312 4420 8890 4242", holder: "K. HOLDER", expiry: "09/29" },
     compliance: "Kaloq Card is issued by licensed, regulated partners.",
   },
   benefits: [
     { title: "Spend with confidence", description: "Use your card for everyday purchases with reliable transaction processing." },
     { title: "Manage everything in real time", description: "View transactions, manage your balance, and control your card directly from the app." },
-    { title: "Fund with crypto", description: "Add funds using supported stablecoins or digital assets without a complicated payment process." },
+    { title: "Fund with supported digital assets", description: "Add funds using supported stablecoins or digital assets without a complicated payment process." },
     { title: "Use it around the world", description: "Pay online and in stores across supported countries, currencies, and merchant categories." },
   ],
   everyday: {
@@ -276,8 +276,8 @@ export const productCard = {
     },
   },
   funding: {
-    eyebrow: "Crypto funding",
-    heading: "From crypto balance to everyday ",
+    eyebrow: "Digital asset funding",
+    heading: "From digital asset balance to everyday ",
     headingAccent: "purchases",
     copy: "Start spending in three simple steps — no complicated payment process.",
     steps: [
@@ -386,7 +386,7 @@ export const productCard = {
   ] satisfies FaqItem[],
   faqMoreLink: { label: "View all questions", href: "#" }, // [TODO: link to a full FAQ page once one exists]
   closer: {
-    heading: "Make your crypto ",
+    heading: "Make your supported digital assets ",
     headingAccent: "spendable",
     copy: "Apply for your card, add supported digital assets, and start spending online and in stores.",
     primaryCta: { label: "Get your card", href: "https://card.kaloq.com" },
@@ -518,7 +518,7 @@ const sharedStablecoinFlow = [
 
 const solutionFaq = [
   ...personalSolutionFaq,
-  { question: "Does the merchant receive crypto?", answer: "No. In the card transaction flow, supported stablecoins are converted and the merchant receives ordinary fiat currency." },
+  { question: "Does the merchant receive digital assets?", answer: "No. In the card transaction flow, supported stablecoins are converted and the merchant receives ordinary fiat currency." },
   { question: "What checks apply?", answer: "KYC, transaction monitoring, source-of-funds review, and restrictions for certain regions or high-risk merchants may apply." },
 ] satisfies FaqItem[];
 
@@ -526,73 +526,73 @@ export const solutions = {
   stablecoinEarners: {
     slug: "stablecoin-earners",
     heading: "For Stablecoin Earners",
-    hero: { h1: "Turn on-chain income into everyday spending.", sub: "If you earn in supported USDT or USDC, move it into Kaloq and use the Kaloq Card for travel, subscriptions, shopping, and everyday expenses.", primaryCta: { label: "Get your card", href: "https://card.kaloq.com" }, secondaryCta: { label: "Explore Kaloq Card", href: "/products/card" }, image: "/images/use-cases/stablecoin-earners.jpg", imageAlt: "A stablecoin earner working across multiple financial screens", objectPosition: "center" },
+    hero: { h1: "Turn on-chain income into everyday spending", sub: "If you earn in supported USDT or USDC, move it into Kaloq and use the Kaloq Card for travel, subscriptions, shopping, and everyday expenses.", primaryCta: { label: "Get your card", href: "https://card.kaloq.com" }, secondaryCta: { label: "Explore Kaloq Card", href: "/products/card" }, image: "/images/use-cases/stablecoin-earners.jpg", imageAlt: "A stablecoin earner working across multiple financial screens", objectPosition: "center" },
     painPoints: [
       { text: "Your income arrives on-chain, but daily life still expects a card.", icon: "wallet" },
       { text: "Selling on an exchange and withdrawing to a bank adds extra steps before you can spend.", icon: "transfer" },
       { text: "You want to see what moved before your balance becomes a purchase.", icon: "eye" },
     ] satisfies SolutionPainPoint[],
-    solutionIntro: "A direct path from supported on-chain income to the things you buy.",
+    solutionIntro: "A direct path from supported on-chain income to the things you buy",
     features: [
       { title: "Use the balance you already earn", description: "Start with supported USDT or USDC in your personal wallet.", icon: "coins" },
       { title: "Pay for real life", description: "Use the Kaloq Card for software, subscriptions, travel, shopping, and everyday expenses.", icon: "shopping-bag" },
       { title: "Keep activity visible", description: "Review your balance, card activity, and transfer status in one place.", icon: "activity" },
     ] satisfies SolutionFeature[],
-    flow: { heading: "From on-chain income to a real purchase.", sub: "Move supported funds into Kaloq, then let the card handle the payment flow.", steps: sharedStablecoinFlow },
+    flow: { heading: "From on-chain income to a real purchase", sub: "Move supported funds into Kaloq, then let the card handle the payment flow.", steps: sharedStablecoinFlow },
     faq: solutionFaq,
   },
   crossBorderLiving: {
     slug: "cross-border-living",
     heading: "For Cross-border Living",
-    hero: { h1: "Keep a dollar balance. Spend in local currency.", sub: "Hold supported dollar stablecoins and use the Kaloq Card for eligible expenses as you live, work, or travel across borders.", primaryCta: { label: "Get your card", href: "https://card.kaloq.com" }, secondaryCta: { label: "See pricing", href: "/pricing" }, image: "/images/use-cases/cross-border-living.jpg", imageAlt: "People working remotely together in a café", objectPosition: "center" },
+    hero: { h1: "Keep a dollar balance. Spend in local currency", sub: "Hold supported dollar stablecoins and use the Kaloq Card for eligible expenses as you live, work, or travel across borders.", primaryCta: { label: "Get your card", href: "https://card.kaloq.com" }, secondaryCta: { label: "See pricing", href: "/pricing" }, image: "/images/use-cases/cross-border-living.jpg", imageAlt: "People working remotely together in a café", objectPosition: "center" },
     painPoints: [
       { text: "Your balance can travel with you while your expenses change country by country.", icon: "globe" },
       { text: "Travel, accommodation, transport, restaurants, and online tools still need a usable card.", icon: "travel" },
       { text: "A cross-border card is not automatically cheaper; funding, conversion, FX, cross-border, and ATM costs all matter.", icon: "receipt" },
     ] satisfies SolutionPainPoint[],
-    solutionIntro: "One personal spending flow for the places your life takes you.",
+    solutionIntro: "One personal spending flow for the places your life takes you",
     features: [
       { title: "Stay ready across borders", description: "Keep supported dollar stablecoins available for eligible local spending.", icon: "globe" },
       { title: "Cover the moving parts", description: "Use the Kaloq Card for travel, accommodation, transport, restaurants, and online tools.", icon: "travel" },
       { title: "Understand the total cost", description: "Review current indicative fees and confirm the final cost before you spend.", icon: "receipt" },
     ] satisfies SolutionFeature[],
-    flow: { heading: "Keep the same balance as life moves.", sub: "Your wallet balance starts the flow; the card completes it in local spending.", steps: sharedStablecoinFlow },
+    flow: { heading: "Keep the same balance as life moves", sub: "Your wallet balance starts the flow; the card completes it in local spending.", steps: sharedStablecoinFlow },
     faq: solutionFaq,
   },
   dollarBalanceHolders: {
     slug: "dollar-balance-holders",
     heading: "For Dollar Balance Holders",
-    hero: { h1: "Hold dollar value. Spend in local currency.", sub: "Keep supported dollar stablecoins in your wallet, then move funds into Kaloq when everyday expenses arise.", primaryCta: { label: "Get your card", href: "https://card.kaloq.com" }, secondaryCta: { label: "Explore Kaloq Card", href: "/products/card" }, image: "/images/use-cases/dollar-balance-holders.jpg", imageAlt: "A person holding a payment card beside a tablet", objectPosition: "center" },
+    hero: { h1: "Hold dollar value. Spend in local currency", sub: "Keep supported dollar stablecoins in your wallet, then move funds into Kaloq when everyday expenses arise.", primaryCta: { label: "Get your card", href: "https://card.kaloq.com" }, secondaryCta: { label: "Explore Kaloq Card", href: "/products/card" }, image: "/images/use-cases/dollar-balance-holders.jpg", imageAlt: "A person holding a payment card beside a tablet", objectPosition: "center" },
     painPoints: [
       { text: "You want to hold a dollar-denominated balance while local expenses continue every day.", icon: "dollar" },
       { text: "A wallet can hold value, but groceries, transport and subscriptions still need a card.", icon: "shopping-bag" },
       { text: "You need a clear view of what you move into spending and what remains available.", icon: "eye" },
     ] satisfies SolutionPainPoint[],
-    solutionIntro: "Keep dollar value connected to the moments you need to spend.",
+    solutionIntro: "Keep dollar value connected to the moments you need to spend",
     features: [
       { title: "Keep value in dollars", description: "Hold supported dollar stablecoins until an eligible expense comes up.", icon: "dollar" },
       { title: "Spend on demand", description: "Move only what you need into Kaloq and use the Kaloq Card for eligible local purchases.", icon: "card" },
       { title: "Follow every step", description: "See balances, card activity, and transfer status before and after you spend.", icon: "activity" },
     ] satisfies SolutionFeature[],
-    flow: { heading: "From dollar balance to local purchase.", sub: "Keep supported dollar stablecoins ready, then connect them to everyday spending when you choose.", steps: sharedStablecoinFlow },
+    flow: { heading: "From dollar balance to local purchase", sub: "Keep supported dollar stablecoins ready, then connect them to everyday spending when you choose.", steps: sharedStablecoinFlow },
     faq: solutionFaq,
   },
   globalOnlineSpending: {
     slug: "global-online-spending",
     heading: "For Global Online Spending",
-    hero: { h1: "Use your stablecoin balance for global online spending.", sub: "Move supported USDT or USDC into Kaloq and use the Kaloq Card for eligible subscriptions, software, shopping, travel bookings, and other international online purchases.", primaryCta: { label: "Get your card", href: "https://card.kaloq.com" }, secondaryCta: { label: "Explore Kaloq Card", href: "/products/card" }, image: "/images/use-cases/global-online-spending.jpg", imageAlt: "A person shopping online with a laptop and phone", objectPosition: "center" },
+    hero: { h1: "Use your stablecoin balance for global online spending", sub: "Move supported USDT or USDC into Kaloq and use the Kaloq Card for eligible subscriptions, software, shopping, travel bookings, and other international online purchases.", primaryCta: { label: "Get your card", href: "https://card.kaloq.com" }, secondaryCta: { label: "Explore Kaloq Card", href: "/products/card" }, image: "/images/use-cases/global-online-spending.jpg", imageAlt: "A person shopping online with a laptop and phone", objectPosition: "center" },
     painPoints: [
       { text: "Your stablecoin balance is ready, but many online services still expect a card.", icon: "laptop" },
       { text: "International subscriptions, software and shopping can fail when your local card or payment route is not supported.", icon: "alert" },
       { text: "You want to know what moved into a purchase and what remains in your balance.", icon: "eye" },
     ] satisfies SolutionPainPoint[],
-    solutionIntro: "Bring the balance you hold into the online services you use.",
+    solutionIntro: "Bring the balance you hold into the online services you use",
     features: [
       { title: "Pay for global services", description: "Use the Kaloq Card for eligible subscriptions, software, shopping and travel bookings.", icon: "globe" },
       { title: "Keep your balance visible", description: "Review your balance, card activity and transfer status in one place.", icon: "activity" },
       { title: "Know what is supported", description: "Payment availability depends on your region, merchant category and card verification requirements.", icon: "shield" },
     ] satisfies SolutionFeature[],
-    flow: { heading: "From stablecoin balance to online checkout.", sub: "Move supported funds into Kaloq, then use the card for eligible global online purchases.", steps: sharedStablecoinFlow },
+    flow: { heading: "From stablecoin balance to online checkout", sub: "Move supported funds into Kaloq, then use the card for eligible global online purchases.", steps: sharedStablecoinFlow },
     faq: solutionFaq,
   },
 };
